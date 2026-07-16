@@ -22,7 +22,7 @@
 
         header {
             background-color: #003580;
-            padding: 15px 5%;
+            padding: 12px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -30,6 +30,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         .logo {
@@ -49,9 +50,10 @@
             background: rgba(255,255,255,0.15);
             padding: 6px 14px;
             border-radius: 20px;
-            font-size: 13px;
+            font-size: 12px;
             border: 1px solid white;
             transition: background 0.2s ease;
+            white-space: nowrap;
         }
 
         .back-btn:hover {
@@ -59,7 +61,7 @@
         }
 
         .container {
-            padding: 25px 5%;
+            padding: 20px 5%;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -67,19 +69,20 @@
         .page-title {
             text-align: center;
             color: #003580;
-            margin-bottom: 5px;
-            font-size: 26px;
+            margin-bottom: 6px;
+            font-size: 24px;
         }
 
         .hotel-badge {
             text-align: center;
             background: #eef4ff;
             color: #003580;
-            padding: 10px;
-            border-radius: 8px;
+            padding: 10px 15px;
+            border-radius: 10px;
             font-weight: bold;
-            margin-bottom: 25px;
-            font-size: 14px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            line-height: 1.5;
         }
 
         .hotel-badge a {
@@ -91,7 +94,7 @@
             background: white;
             border-radius: 12px;
             padding: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
@@ -100,15 +103,16 @@
             border-bottom: 2px solid #edf2f7;
             padding-bottom: 8px;
             margin-bottom: 15px;
-            font-size: 18px;
+            font-size: 17px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
+        /* Grid - დესკტოპზე 2 სვეტი, მობილურზე 1 */
         .day-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
 
@@ -121,8 +125,11 @@
 
         .day-card h4 {
             color: #003580;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .day-card ul {
@@ -132,7 +139,8 @@
         }
 
         .day-card ul li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            line-height: 1.5;
         }
 
         /* Google Maps ლინკების სტილი */
@@ -142,7 +150,8 @@
             transition: color 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
+            font-weight: 500;
         }
 
         .map-item:hover {
@@ -157,13 +166,14 @@
 
         .list-styled {
             list-style: none;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .list-styled li {
-            margin-bottom: 8px;
-            padding-left: 15px;
+            margin-bottom: 10px;
+            padding-left: 14px;
             position: relative;
+            line-height: 1.5;
         }
 
         .list-styled li::before {
@@ -174,10 +184,70 @@
             left: 0;
         }
 
+        /* =========================================================
+           📱 MOBILE OPTIMIZATION (მობილურის ოპტიმიზაცია)
+           ========================================================= */
         @media (max-width: 600px) {
-            .container { padding: 15px 12px; }
-            .page-title { font-size: 20px; }
-            .section-box { padding: 15px; }
+            header {
+                padding: 10px 12px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .back-btn {
+                padding: 5px 10px;
+                font-size: 11px;
+            }
+
+            .container {
+                padding: 15px 10px;
+            }
+
+            .page-title {
+                font-size: 20px;
+            }
+
+            .hotel-badge {
+                font-size: 12px;
+                padding: 8px;
+                margin-bottom: 15px;
+            }
+
+            .section-box {
+                padding: 14px;
+                margin-bottom: 15px;
+                border-radius: 10px;
+            }
+
+            .section-box h3 {
+                font-size: 15px;
+                margin-bottom: 12px;
+            }
+
+            /* მობილურზე 1 სვეტიანი განლაგება */
+            .day-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .day-card {
+                padding: 12px;
+            }
+
+            .day-card h4 {
+                font-size: 14px;
+            }
+
+            .day-card ul li {
+                font-size: 12.5px;
+                margin-bottom: 6px;
+            }
+
+            .list-styled {
+                font-size: 12.5px;
+            }
         }
     </style>
 </head>
@@ -185,7 +255,7 @@
 
     <header>
         <a href="/" class="logo">Czech<span>Guide</span></a>
-        <a href="/" class="back-btn"><i class="fa-solid fa-arrow-left"></i> მთავარზე დაბრუნება</a>
+        <a href="/" class="back-btn"><i class="fa-solid fa-arrow-left"></i> მთავარზე</a>
     </header>
 
     <div class="container">
@@ -197,13 +267,13 @@
             </a> (18 აგვისტოდან)
         </div>
 
-        <!-- 1. დღიური მარშრუტი Google Maps ლინკებით -->
+        <!-- 1. დღიური მარშრუტი -->
         <div class="section-box">
             <h3><i class="fa-solid fa-calendar-days"></i> დღიური გეგმა</h3>
             <div class="day-grid">
                 <!-- 18 აგვისტო -->
                 <div class="day-card">
-                    <h4>18 აგვისტო</h4>
+                    <h4><i class="fa-regular fa-calendar-check"></i> 18 აგვისტო</h4>
                     <ul>
                         <li>• <a href="https://www.google.com/maps/search/?api=1&query=ibis+Praha+Old+Town" target="_blank" class="map-item">დასვენება სასტუმროში <i class="fa-solid fa-location-dot"></i></a></li>
                         <li>• <a href="https://www.google.com/maps/search/?api=1&query=Palladium+Prague" target="_blank" class="map-item">Palladium სავაჭრო ცენტრი <i class="fa-solid fa-location-dot"></i></a></li>
@@ -216,7 +286,7 @@
 
                 <!-- 19 აგვისტო -->
                 <div class="day-card">
-                    <h4>19 აგვისტო</h4>
+                    <h4><i class="fa-regular fa-calendar-check"></i> 19 აგვისტო</h4>
                     <ul>
                         <li>• <a href="https://www.google.com/maps/search/?api=1&query=Prague+Castle" target="_blank" class="map-item">პრაღის ციხე <i class="fa-solid fa-location-dot"></i></a></li>
                         <li>• <a href="https://www.google.com/maps/search/?api=1&query=St.+Vitus+Cathedral+Prague" target="_blank" class="map-item">წმინდა ვიტუსის ტაძარი <i class="fa-solid fa-location-dot"></i></a></li>
@@ -228,7 +298,7 @@
 
                 <!-- 20 აგვისტო -->
                 <div class="day-card">
-                    <h4>20 აგვისტო (საბავშვო)</h4>
+                    <h4><i class="fa-regular fa-calendar-check"></i> 20 აგვისტო (საბავშვო)</h4>
                     <ul>
                         <li>• <a href="https://www.google.com/maps/search/?api=1&query=Prague+Zoo" target="_blank" class="map-item">პრაღის ზოოპარკი <i class="fa-solid fa-location-dot"></i></a></li>
                         <li>• ნავით გასეირნება ვლტავაზე</li>
@@ -239,7 +309,7 @@
 
                 <!-- 21 აგვისტო -->
                 <div class="day-card">
-                    <h4>21 აგვისტო</h4>
+                    <h4><i class="fa-regular fa-calendar-check"></i> 21 აგვისტო</h4>
                     <ul>
                         <li>• <a href="https://www.google.com/maps/search/?api=1&query=Wenceslas+Square+Prague" target="_blank" class="map-item">ვაცლავის მოედანი <i class="fa-solid fa-location-dot"></i></a></li>
                         <li>• <a href="https://www.google.com/maps/search/?api=1&query=Franz+Kafka+-+Rotating+Head+Prague" target="_blank" class="map-item">ფრანც კაფკას მოძრავი თავი <i class="fa-solid fa-location-dot"></i></a></li>
@@ -252,31 +322,30 @@
 
         <!-- 2. კვება და ლუდი -->
         <div class="section-box">
-            <h3><i class="fa-solid fa-utensils"></i> სად ვისადილოთ / ვისაუზმოთ (ibis-თან ახლოს)</h3>
+            <h3><i class="fa-solid fa-utensils"></i> სად ვისადილოთ (ibis-თან ახლოს)</h3>
             <ul class="list-styled">
-                <li><a href="https://www.google.com/maps/search/?api=1&query=Havelska+Koruna+Prague" target="_blank" class="map-item"><b>Havelská Koruna</b> <i class="fa-solid fa-location-dot"></i></a>: 200–350 CZK. საუკეთესო ბიუჯეტური არჩევანი.</li>
-                <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: 250–450 CZK. ტრადიციული ჩეხური კერძები და ლუდი.</li>
-                <li><a href="https://www.google.com/maps/search/?api=1&query=Pizza+Nuova+Prague" target="_blank" class="map-item"><b>Pizza Nuova</b> <i class="fa-solid fa-location-dot"></i></a>: პიცა და პასტა, კარგი არჩევანია ბავშვებთან ერთად.</li>
-                <li><a href="https://www.google.com/maps/search/?api=1&query=Cafe+Imperial+Prague" target="_blank" class="map-item"><b>Café Imperial</b> <i class="fa-solid fa-location-dot"></i></a>: ლამაზი ინტერიერი და გემრიელი ჩეხური/ევროპული სამზარეულო.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Havelska+Koruna+Prague" target="_blank" class="map-item"><b>Havelská Koruna</b> <i class="fa-solid fa-location-dot"></i></a>: 200–350 CZK. ბიუჯეტური სასადილო.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: 250–450 CZK. ჩეხური კერძები და ლუდი.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Pizza+Nuova+Prague" target="_blank" class="map-item"><b>Pizza Nuova</b> <i class="fa-solid fa-location-dot"></i></a>: პიცა და პასტა (ბავშვებთან ერთად).</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Cafe+Imperial+Prague" target="_blank" class="map-item"><b>Café Imperial</b> <i class="fa-solid fa-location-dot"></i></a>: ულამაზესი ინტერიერი.</li>
             </ul>
 
-            <h4 style="margin: 15px 0 10px 0; color: #003580; font-size: 15px;">🍻 სად დავლიოთ კარგი ჩეხური ლუდი</h4>
+            <h4 style="margin: 15px 0 10px 0; color: #003580; font-size: 14px;">🍻 კარგი ჩეხური ლუდი</h4>
             <ul class="list-styled">
-                <li><a href="https://www.google.com/maps/search/?api=1&query=U+Supa+Prague" target="_blank" class="map-item"><b>Staroměstský pivovar U Supa</b> <i class="fa-solid fa-location-dot"></i></a>: საკუთარი ლუდსახარში, სასტუმროდან 5-7 წუთი.</li>
-                <li><a href="https://www.google.com/maps/search/?api=1&query=U+Kunstatu+Prague" target="_blank" class="map-item"><b>U Kunštátů</b> <i class="fa-solid fa-location-dot"></i></a>: კრაფტ ლუდების დიდი არჩევანი.</li>
-                <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: ტანკიდან ჩამოცხელებული Pilsner Urquell.</li>
-                <li><a href="https://www.google.com/maps/search/?api=1&query=Lod+Pivovar+Prague" target="_blank" class="map-item"><b>Loď Pivovar</b> <i class="fa-solid fa-location-dot"></i></a>: ლუდი მდინარე ვლტავაზე ულამაზესი ხედით.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=U+Supa+Prague" target="_blank" class="map-item"><b>Staroměstský pivovar U Supa</b> <i class="fa-solid fa-location-dot"></i></a>: 5-7 წუთი ibis-დან.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=U+Kunstatu+Prague" target="_blank" class="map-item"><b>U Kunštátů</b> <i class="fa-solid fa-location-dot"></i></a>: კრაფტ ლუდების არჩევანი.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Lod+Pivovar+Prague" target="_blank" class="map-item"><b>Loď Pivovar</b> <i class="fa-solid fa-location-dot"></i></a>: ლუდი მდინარეზე.</li>
             </ul>
         </div>
 
         <!-- 3. ბილეთები და რჩევები -->
         <div class="section-box" style="background: #eef4ff;">
-            <h3><i class="fa-solid fa-circle-info"></i> სავარაუდო ბილეთები & რჩევები</h3>
+            <h3><i class="fa-solid fa-circle-info"></i> ბილეთები & რჩევები</h3>
             <ul class="list-styled">
                 <li><b>პრაღის ციხე:</b> ~450 CZK ზრდასრული.</li>
                 <li><b>ზოოპარკი:</b> ~330 CZK ზრდასრული, 250 CZK ბავშვი.</li>
-                <li><b>კრუიზი ვლტავაზე (1 საათი):</b> ~350–600 CZK.</li>
-                <li><b>აუცილებლად გასასინჯი ლუდები:</b> Pilsner Urquell, Kozel, Budvar, U Fleků-ს მუქი ლუდი.</li>
+                <li><b>კრუიზი ვლტავაზე:</b> ~350–600 CZK.</li>
+                <li><b>ლუდები:</b> Pilsner Urquell, Kozel, Budvar, U Fleků.</li>
                 <li><b>რჩევები:</b> ატარეთ კომფორტული ფეხსაცმელი, წყლის ბოთლი თან იქონიეთ, ბარათით გადახდა თითქმის ყველგან შესაძლებელია.</li>
             </ul>
         </div>
