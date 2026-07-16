@@ -24,18 +24,19 @@
         /* Header / Navigation */
         header {
             background-color: #003580; /* Booking Dark Blue */
-            padding: 15px 8%;
+            padding: 12px 5%;
             position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            width: 100%;
         }
 
         .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .logo {
@@ -51,17 +52,17 @@
         .controls-group {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .select-styled {
             background-color: transparent;
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.4);
-            padding: 5px 10px;
+            padding: 4px 8px;
             border-radius: 20px;
             font-weight: bold;
-            font-size: 13px;
+            font-size: 12px;
             outline: none;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -79,34 +80,36 @@
 
         /* Nav Horizontal Scroll for Mobile */
         nav {
+            width: 100%;
             overflow-x: auto;
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox-ისთვის */
+            scrollbar-width: none; /* Firefox */
             padding-bottom: 2px;
         }
 
         nav::-webkit-scrollbar {
-            display: none; /* Chrome/Safari-სთვის */
+            display: none; /* Chrome/Safari */
         }
 
         nav ul {
             display: inline-flex;
             list-style: none;
-            gap: 8px;
+            gap: 6px;
+            padding-right: 15px; /* მარჯვენა მხარეს დაშორება სქროლისას */
         }
 
         nav ul li a {
             text-decoration: none;
             color: #ffffff;
             font-weight: 500;
-            font-size: 13px;
-            padding: 8px 16px;
+            font-size: 12px;
+            padding: 6px 12px;
             border-radius: 20px;
             transition: all 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             border: 1px solid transparent;
             white-space: nowrap;
         }
@@ -172,7 +175,7 @@
 
         /* Container & Cards */
         .container {
-            padding: 40px 8%;
+            padding: 40px 5%;
         }
 
         .section-title {
@@ -300,60 +303,60 @@
            ========================================================= */
         @media (max-width: 600px) {
             header {
-                padding: 12px 15px;
+                padding: 10px 12px;
             }
 
             .logo {
-                font-size: 20px;
+                font-size: 19px;
             }
 
             .select-styled {
-                padding: 4px 8px;
-                font-size: 12px;
+                padding: 3px 6px;
+                font-size: 11px;
             }
 
             .hero {
                 height: 45vh;
-                min-height: 320px;
+                min-height: 300px;
                 padding: 0 15px;
             }
 
             .hero-content h1 {
-                font-size: 26px;
-                margin-bottom: 10px;
+                font-size: 24px;
+                margin-bottom: 8px;
             }
 
             .hero-content p {
-                font-size: 14px;
-                margin-bottom: 18px;
+                font-size: 13px;
+                margin-bottom: 16px;
                 line-height: 1.4;
             }
 
             .btn {
-                padding: 10px 22px;
-                font-size: 14px;
+                padding: 9px 20px;
+                font-size: 13px;
             }
 
             .container {
-                padding: 25px 15px;
+                padding: 20px 12px;
             }
 
             .section-title {
-                font-size: 22px;
-                margin-bottom: 20px;
+                font-size: 20px;
+                margin-bottom: 18px;
             }
 
             .cards-grid {
-                grid-template-columns: 1fr; /* მობილურში 1 სვეტი */
-                gap: 18px;
+                grid-template-columns: 1fr;
+                gap: 16px;
             }
 
             .card-img {
-                height: 180px;
+                height: 170px;
             }
 
             .card-body {
-                padding: 15px;
+                padding: 14px;
             }
         }
     </style>
