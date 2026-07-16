@@ -465,9 +465,7 @@
                            class="map-link">
                             <i class="fa-solid fa-location-dot"></i> {{ loc.location }}
                         </a>
-                        <span class="price-display" data-base-price="{{ loc.price_czk }}">
-                            {{ loc.price_text }}
-                        </span>
+                        <span class="price-display" data-base-price="{{ loc.price_czk }}"></span>
                     </div>
                 </div>
             </div>
@@ -578,7 +576,7 @@
                 CZK: 1.0
             };
 
-            // 1. ვალუტის გადაყვანა (მხოლოდ ბარათების გრიდისთვის)
+            // 1. ვალუტის გადაყვანა
             function updatePrices() {
                 const selectedCurrency = currencySelect.value;
                 const rate = rates[selectedCurrency];
@@ -687,6 +685,9 @@
                     }
                 });
             });
+
+            // 🚀 ჩატვირთვისთანავე ავტომატურად გადაიყვანოს ფასები GEL-ში
+            updatePrices();
 
             // თავდაპირველად გახსნას სანახაობები
             document.getElementById("btn-sightseeing").click();
