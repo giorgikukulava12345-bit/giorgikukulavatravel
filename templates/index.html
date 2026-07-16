@@ -281,16 +281,16 @@
             gap: 4px;
         }
 
-        .price-display b {
+        .price-display b, .plan-price-display b {
             color: #2e7d32;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         /* ---------------------------------------------------------
            გეგმის (Itinerary) სექცია
            --------------------------------------------------------- */
         .itinerary-container {
-            display: none; /* ნაგულისხმევად დამალულია */
+            display: none;
             background: white;
             border-radius: 12px;
             padding: 20px;
@@ -474,7 +474,7 @@
             {% endfor %}
         </div>
 
-        <!-- 5-დღიანი გეგმის კონტეინერი (იხსნება მხოლოდ 'გეგმა'-ზე დაჭერისას) -->
+        <!-- 5-დღიანი გეგმის კონტეინერი -->
         <div id="itinerary-block" class="itinerary-container">
             <div class="hotel-badge">
                 <i class="fa-solid fa-hotel"></i> სასტუმრო: 
@@ -529,12 +529,12 @@
                 </div>
             </div>
 
-            <!-- რესტორნები და რჩევები -->
+            <!-- რესტორნები და რჩევები დინამიკური ფასებით -->
             <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
                 <h4 style="color: #003580; margin-bottom: 8px; font-size: 14px;"><i class="fa-solid fa-utensils"></i> სად ვისადილოთ / ვისაუზმოთ</h4>
                 <ul class="list-styled">
-                    <li><a href="https://www.google.com/maps/search/?api=1&query=Havelska+Koruna+Prague" target="_blank" class="map-item"><b>Havelská Koruna</b> <i class="fa-solid fa-location-dot"></i></a>: 200–350 CZK. ბიუჯეტური არჩევანი.</li>
-                    <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: 250–450 CZK. ტრადიციული კერძები.</li>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=Havelska+Koruna+Prague" target="_blank" class="map-item"><b>Havelská Koruna</b> <i class="fa-solid fa-location-dot"></i></a>: <span class="plan-price-display" data-min-czk="200" data-max-czk="350">200–350 CZK</span>. ბიუჯეტური არჩევანი.</li>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: <span class="plan-price-display" data-min-czk="250" data-max-czk="450">250–450 CZK</span>. ტრადიციული კერძები.</li>
                     <li><a href="https://www.google.com/maps/search/?api=1&query=Pizza+Nuova+Prague" target="_blank" class="map-item"><b>Pizza Nuova</b> <i class="fa-solid fa-location-dot"></i></a>: პიცა/პასტა ბავშვებთან ერთად.</li>
                     <li><a href="https://www.google.com/maps/search/?api=1&query=Cafe+Imperial+Prague" target="_blank" class="map-item"><b>Café Imperial</b> <i class="fa-solid fa-location-dot"></i></a>: ულამაზესი ინტერიერი.</li>
                 </ul>
@@ -543,9 +543,9 @@
             <div style="background: #eef4ff; padding: 15px; border-radius: 10px;">
                 <h4 style="color: #003580; margin-bottom: 8px; font-size: 14px;"><i class="fa-solid fa-circle-info"></i> ბილეთები & რჩევები</h4>
                 <ul class="list-styled">
-                    <li><b>პრაღის ციხე:</b> ~450 CZK ზრდასრული.</li>
-                    <li><b>ზოოპარკი:</b> ~330 CZK ზრდასრული, 250 CZK ბავშვი.</li>
-                    <li><b>კრუიზი ვლტავაზე:</b> ~350–600 CZK.</li>
+                    <li><b>პრაღის ციხე:</b> ~<span class="plan-price-display" data-min-czk="450">450 CZK</span> ზრდასრული.</li>
+                    <li><b>ზოოპარკი:</b> ~<span class="plan-price-display" data-min-czk="330">330 CZK</span> ზრდასრული, <span class="plan-price-display" data-min-czk="250">250 CZK</span> ბავშვი.</li>
+                    <li><b>კრუიზი ვლტავაზე:</b> ~<span class="plan-price-display" data-min-czk="350" data-max-czk="600">350–600 CZK</span>.</li>
                     <li><b>ლუდები:</b> Pilsner Urquell, Kozel, Budvar, U Fleků.</li>
                     <li><b>რჩევები:</b> ატარეთ კომფორტული ფეხსაცმელი, წყლის ბოთლი თან იქონიეთ, ბარათით გადახდა თითქმის ყველგან შესაძლებელია.</li>
                 </ul>
@@ -558,6 +558,7 @@
             const currencySelect = document.getElementById("currency-select");
             const langSelect = document.getElementById("lang-select");
             const priceDisplays = document.querySelectorAll(".price-display");
+            const planPriceDisplays = document.querySelectorAll(".plan-price-display");
             const ratesContainer = document.getElementById("exchange-rates");
 
             const rates = {
@@ -567,11 +568,17 @@
                 CZK: 1.0
             };
 
-            // 1. ვალუტის გადაყვანა
+            // 1. ვალუტის გადაყვანა (ბარათებისთვის და გეგმისთვის)
             function updatePrices() {
                 const selectedCurrency = currencySelect.value;
                 const rate = rates[selectedCurrency];
 
+                let symbol = selectedCurrency;
+                if (selectedCurrency === "GEL") symbol = "₾";
+                else if (selectedCurrency === "USD") symbol = "$";
+                else if (selectedCurrency === "EUR") symbol = "€";
+
+                // ბარათების ფასები
                 priceDisplays.forEach(display => {
                     const basePrice = parseFloat(display.getAttribute("data-base-price"));
 
@@ -581,12 +588,22 @@
                     }
 
                     const convertedPrice = (basePrice * rate).toFixed(1);
-                    let symbol = selectedCurrency;
-                    if (selectedCurrency === "GEL") symbol = "₾";
-                    else if (selectedCurrency === "USD") symbol = "$";
-                    else if (selectedCurrency === "EUR") symbol = "€";
-
                     display.innerHTML = `<b>${convertedPrice} ${symbol}</b>`;
+                });
+
+                // გეგმის სექციის ფასები
+                planPriceDisplays.forEach(display => {
+                    const minCzk = parseFloat(display.getAttribute("data-min-czk"));
+                    const maxCzk = parseFloat(display.getAttribute("data-max-czk"));
+
+                    if (maxCzk) {
+                        const convMin = (minCzk * rate).toFixed(1);
+                        const convMax = (maxCzk * rate).toFixed(1);
+                        display.innerHTML = `<b>${convMin}–${convMax} ${symbol}</b>`;
+                    } else if (minCzk) {
+                        const convMin = (minCzk * rate).toFixed(1);
+                        display.innerHTML = `<b>${convMin} ${symbol}</b>`;
+                    }
                 });
             }
 
@@ -657,12 +674,10 @@
                     const targetCategory = this.getAttribute("data-target");
 
                     if (targetCategory === "გეგმა") {
-                        // გეგმის ჩვენება
                         cardsContainer.style.display = "none";
                         itineraryBlock.style.display = "block";
                         sectionTitle.textContent = langSelect.value === "EN" ? "August 18–22 Itinerary" : "18–22 აგვისტოს გეგმა";
                     } else {
-                        // ბარათების ჩვენება
                         itineraryBlock.style.display = "none";
                         cardsContainer.style.display = "grid";
                         sectionTitle.textContent = this.querySelector("span").textContent;
