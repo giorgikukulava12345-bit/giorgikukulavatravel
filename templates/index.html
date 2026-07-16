@@ -281,7 +281,7 @@
             gap: 4px;
         }
 
-        .price-display b, .plan-price-display b {
+        .price-display b {
             color: #2e7d32;
             font-size: 13px;
         }
@@ -533,20 +533,20 @@
             <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
                 <h4 style="color: #003580; margin-bottom: 8px; font-size: 14px;"><i class="fa-solid fa-utensils"></i> სად ვისადილოთ / ვისაუზმოთ</h4>
                 <ul class="list-styled">
-                    <li><a href="https://www.google.com/maps/search/?api=1&query=Havelska+Koruna+Prague" target="_blank" class="map-item"><b>Havelská Koruna</b> <i class="fa-solid fa-location-dot"></i></a>: <span class="plan-price-display" data-min-czk="200" data-max-czk="350">200–350 CZK</span>. ბიუჯეტური არჩევანი.</li>
-                    <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: <span class="plan-price-display" data-min-czk="250" data-max-czk="450">250–450 CZK</span>. ტრადიციული კერძები.</li>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=Havelska+Koruna+Prague" target="_blank" class="map-item"><b>Havelská Koruna</b> <i class="fa-solid fa-location-dot"></i></a>: <b>200–350 CZK (~25–43 GEL)</b>. ბიუჯეტური არჩევანი.</li>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: <b>250–450 CZK (~31–56 GEL)</b>. ტრადიციული კერძები.</li>
                     <li><a href="https://www.google.com/maps/search/?api=1&query=Pizza+Nuova+Prague" target="_blank" class="map-item"><b>Pizza Nuova</b> <i class="fa-solid fa-location-dot"></i></a>: პიცა/პასტა ბავშვებთან ერთად.</li>
                     <li><a href="https://www.google.com/maps/search/?api=1&query=Cafe+Imperial+Prague" target="_blank" class="map-item"><b>Café Imperial</b> <i class="fa-solid fa-location-dot"></i></a>: ულამაზესი ინტერიერი.</li>
                 </ul>
             </div>
 
-            <!-- ბილეთები & რჩევები დინამიკური ფასებით -->
+            <!-- ბილეთები & რჩევები -->
             <div style="background: #eef4ff; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
                 <h4 style="color: #003580; margin-bottom: 8px; font-size: 14px;"><i class="fa-solid fa-circle-info"></i> ბილეთები & რჩევები</h4>
                 <ul class="list-styled">
-                    <li><b>პრაღის ციხე:</b> ~<span class="plan-price-display" data-min-czk="450">450 CZK</span> ზრდასრული.</li>
-                    <li><b>ზოოპარკი:</b> ~<span class="plan-price-display" data-min-czk="330">330 CZK</span> ზრდასრული, <span class="plan-price-display" data-min-czk="250">250 CZK</span> ბავშვი.</li>
-                    <li><b>კრუიზი ვლტავაზე:</b> ~<span class="plan-price-display" data-min-czk="350" data-max-czk="600">350–600 CZK</span>.</li>
+                    <li><b>პრაღის ციხე:</b> ~<b>450 CZK (~56 GEL)</b> ზრდასრული.</li>
+                    <li><b>ზოოპარკი:</b> ~<b>330 CZK (~41 GEL)</b> ზრდასრული, <b>250 CZK (~31 GEL)</b> ბავშვი.</li>
+                    <li><b>კრუიზი ვლტავაზე:</b> ~<b>350–600 CZK (~43–74 GEL)</b>.</li>
                     <li><b>ლუდები:</b> Pilsner Urquell, Kozel, Budvar, U Fleků.</li>
                     <li><b>რჩევები:</b> ატარეთ კომფორტული ფეხსაცმელი, წყლის ბოთლი თან იქონიეთ, ბარათით გადახდა თითქმის ყველგან შესაძლებელია.</li>
                 </ul>
@@ -557,7 +557,7 @@
                 <h4 style="color: #2e7d32; margin-bottom: 8px; font-size: 14px;"><i class="fa-solid fa-wallet"></i> სავარაუდო ბიუჯეტი 1 ადამიანზე (4 დღე)</h4>
                 <p style="font-size: 13px; color: #1b5e20; margin-bottom: 5px;">
                     • <b>საჭირო თანხა (ატრაქციონები, კვება, ტრანსპორტი):</b> 
-                    <span class="plan-price-display" data-min-czk="3500" data-max-czk="4900">3,500–4,900 CZK</span>
+                    <b>3,500–4,900 CZK (~430–610 GEL)</b>
                 </p>
                 <span style="font-size: 11px; color: #555;">* არ მოიცავს სასტუმროსა და ავიაბილეთების ღირებულებას.</span>
             </div>
@@ -569,7 +569,6 @@
             const currencySelect = document.getElementById("currency-select");
             const langSelect = document.getElementById("lang-select");
             const priceDisplays = document.querySelectorAll(".price-display");
-            const planPriceDisplays = document.querySelectorAll(".plan-price-display");
             const ratesContainer = document.getElementById("exchange-rates");
 
             const rates = {
@@ -579,18 +578,16 @@
                 CZK: 1.0
             };
 
-            // 1. ვალუტის გადაყვანა (CZK-ს გვერდით ლარის ჩვენებით)
+            // 1. ვალუტის გადაყვანა (მხოლოდ ბარათების გრიდისთვის)
             function updatePrices() {
                 const selectedCurrency = currencySelect.value;
                 const rate = rates[selectedCurrency];
-                const gelRate = rates.GEL;
 
                 let symbol = selectedCurrency;
                 if (selectedCurrency === "GEL") symbol = "₾";
                 else if (selectedCurrency === "USD") symbol = "$";
                 else if (selectedCurrency === "EUR") symbol = "€";
 
-                // ბარათების ფასები
                 priceDisplays.forEach(display => {
                     const basePrice = parseFloat(display.getAttribute("data-base-price"));
 
@@ -599,39 +596,8 @@
                         return;
                     }
 
-                    if (selectedCurrency === "CZK") {
-                        const gelPrice = Math.round(basePrice * gelRate);
-                        display.innerHTML = `<b>${basePrice} CZK (${gelPrice} ₾)</b>`;
-                    } else {
-                        const convertedPrice = (basePrice * rate).toFixed(1);
-                        display.innerHTML = `<b>${convertedPrice} ${symbol}</b>`;
-                    }
-                });
-
-                // გეგმის სექციის ფასები
-                planPriceDisplays.forEach(display => {
-                    const minCzk = parseFloat(display.getAttribute("data-min-czk"));
-                    const maxCzk = parseFloat(display.getAttribute("data-max-czk"));
-
-                    if (selectedCurrency === "CZK") {
-                        if (maxCzk) {
-                            const minGel = Math.round(minCzk * gelRate);
-                            const maxGel = Math.round(maxCzk * gelRate);
-                            display.innerHTML = `<b>${minCzk}–${maxCzk} CZK (${minGel}–${maxGel} ₾)</b>`;
-                        } else if (minCzk) {
-                            const minGel = Math.round(minCzk * gelRate);
-                            display.innerHTML = `<b>${minCzk} CZK (${minGel} ₾)</b>`;
-                        }
-                    } else {
-                        if (maxCzk) {
-                            const convMin = (minCzk * rate).toFixed(1);
-                            const convMax = (maxCzk * rate).toFixed(1);
-                            display.innerHTML = `<b>${convMin}–${convMax} ${symbol}</b>`;
-                        } else if (minCzk) {
-                            const convMin = (minCzk * rate).toFixed(1);
-                            display.innerHTML = `<b>${convMin} ${symbol}</b>`;
-                        }
-                    }
+                    const convertedPrice = (basePrice * rate).toFixed(1);
+                    display.innerHTML = `<b>${convertedPrice} ${symbol}</b>`;
                 });
             }
 
