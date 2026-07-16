@@ -21,21 +21,25 @@
             line-height: 1.6;
         }
 
-        /* Header */
+        /* Header / Navigation */
         header {
             background-color: #003580; /* Booking Dark Blue */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 10%;
+            padding: 15px 8%;
             position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #ffffff;
         }
@@ -44,58 +48,20 @@
             color: #febb02; /* Booking Yellow */
         }
 
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            align-items: center;
-            gap: 10px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 14px;
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid transparent;
-        }
-
-        nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        nav ul li a.active {
-            border: 1px solid #ffffff;
-            background-color: rgba(255, 255, 255, 0.15);
-            font-weight: 600;
-        }
-
-        /* ენისა და ვალუტის კონტროლერები */
         .controls-group {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .select-styled {
             background-color: transparent;
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.4);
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: 20px;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 13px;
             outline: none;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -111,10 +77,55 @@
             color: #ffffff;
         }
 
-        /* Hero */
+        /* Nav Horizontal Scroll for Mobile */
+        nav {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox-ისთვის */
+            padding-bottom: 2px;
+        }
+
+        nav::-webkit-scrollbar {
+            display: none; /* Chrome/Safari-სთვის */
+        }
+
+        nav ul {
+            display: inline-flex;
+            list-style: none;
+            gap: 8px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav ul li a.active {
+            border: 1px solid #ffffff;
+            background-color: rgba(255, 255, 255, 0.15);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1541849546-216549ae216d?q=80&w=1600') no-repeat center center/cover;
-            height: 65vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1541849546-216549ae216d?q=80&w=1600') no-repeat center center/cover;
+            height: 55vh;
+            min-height: 380px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -123,26 +134,33 @@
             padding: 0 20px;
         }
 
+        .hero-content {
+            max-width: 700px;
+        }
+
         .hero-content h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 40px;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            line-height: 1.2;
         }
 
         .hero-content p {
-            font-size: 20px;
-            margin-bottom: 25px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            font-size: 18px;
+            margin-bottom: 22px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+            opacity: 0.95;
         }
 
         .btn {
             display: inline-block;
             background-color: #006ce4;
             color: white;
-            padding: 12px 30px;
+            padding: 12px 28px;
             text-decoration: none;
             border-radius: 25px;
             font-weight: bold;
+            font-size: 15px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 108, 228, 0.4);
         }
@@ -150,17 +168,17 @@
         .btn:hover {
             background-color: #0057b8;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 108, 228, 0.6);
         }
 
+        /* Container & Cards */
         .container {
-            padding: 50px 10%;
+            padding: 40px 8%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 32px;
+            margin-bottom: 30px;
+            font-size: 28px;
             color: #2c3e50;
             position: relative;
         }
@@ -168,17 +186,17 @@
         .section-title::after {
             content: '';
             display: block;
-            width: 50px;
+            width: 40px;
             height: 3px;
             background-color: #003580;
-            margin: 10px auto 0 auto;
+            margin: 8px auto 0 auto;
             border-radius: 2px;
         }
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .card {
@@ -188,22 +206,22 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
-            transition: transform 0.3s ease, opacity 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .card-img {
-            height: 220px;
+            height: 200px;
             background-size: cover;
             background-position: center;
         }
 
         .card-body {
-            padding: 25px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -213,36 +231,37 @@
             align-self: flex-start;
             background-color: #edf2f7;
             color: #4a5568;
-            padding: 4px 12px;
-            border-radius: 15px;
+            padding: 4px 10px;
+            border-radius: 12px;
             font-size: 11px;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .card-body h3 {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #2c3e50;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .card-body p {
             color: #718096;
-            font-size: 14px;
+            font-size: 13px;
             margin-bottom: 15px;
             flex-grow: 1;
+            line-height: 1.5;
         }
 
         .working-hours {
             display: flex;
             align-items: center;
             gap: 6px;
-            font-size: 13px;
+            font-size: 12px;
             color: #003580;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border-top: 1px dashed #edf2f7;
             padding-top: 10px;
         }
@@ -251,10 +270,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 13px;
+            font-size: 12px;
             color: #718096;
             border-top: 1px solid #edf2f7;
-            padding-top: 15px;
+            padding-top: 12px;
             margin-top: auto;
         }
 
@@ -273,18 +292,68 @@
 
         .price-display b {
             color: #2e7d32;
-            font-size: 15px;
+            font-size: 14px;
         }
 
-        @media (max-width: 900px) {
+        /* =========================================================
+           📱 MOBILE ADAPTIVE STYLES (მობილურის ოპტიმიზაცია)
+           ========================================================= */
+        @media (max-width: 600px) {
             header {
-                padding: 15px 5%;
-                flex-direction: column;
-                gap: 15px;
+                padding: 12px 15px;
             }
-            .header-right {
-                flex-direction: column;
-                gap: 10px;
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .select-styled {
+                padding: 4px 8px;
+                font-size: 12px;
+            }
+
+            .hero {
+                height: 45vh;
+                min-height: 320px;
+                padding: 0 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 26px;
+                margin-bottom: 10px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+                margin-bottom: 18px;
+                line-height: 1.4;
+            }
+
+            .btn {
+                padding: 10px 22px;
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 25px 15px;
+            }
+
+            .section-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr; /* მობილურში 1 სვეტი */
+                gap: 18px;
+            }
+
+            .card-img {
+                height: 180px;
+            }
+
+            .card-body {
+                padding: 15px;
             }
         }
     </style>
@@ -293,16 +362,8 @@
 
     <!-- Header -->
     <header>
-        <div class="logo">Czech<span>Guide</span></div>
-        <div class="header-right">
-            <nav>
-                <ul>
-                    <li><a href="#" data-target="all" class="filter-btn active" id="btn-all"><i class="fa-solid fa-layer-group"></i> <span>ყველა</span></a></li>
-                    <li><a href="#" data-target="სანახაობა" class="filter-btn" id="btn-sightseeing"><i class="fa-solid fa-camera"></i> <span>სანახაობები</span></a></li>
-                    <li><a href="#" data-target="რესტორანი" class="filter-btn" id="btn-restaurant"><i class="fa-solid fa-utensils"></i> <span>სად ვჭამოთ</span></a></li>
-                    <li><a href="#" data-target="შოპინგი" class="filter-btn" id="btn-shopping"><i class="fa-solid fa-bag-shopping"></i> <span>შოპინგი</span></a></li>
-                </ul>
-            </nav>
+        <div class="header-top">
+            <div class="logo">Czech<span>Guide</span></div>
             
             <div class="controls-group">
                 <!-- ენის არჩევანი -->
@@ -320,6 +381,16 @@
                 </select>
             </div>
         </div>
+
+        <!-- ჰორიზონტალურად სქროლვადი ნავიგაცია -->
+        <nav>
+            <ul>
+                <li><a href="#" data-target="all" class="filter-btn active" id="btn-all"><i class="fa-solid fa-layer-group"></i> <span>ყველა</span></a></li>
+                <li><a href="#" data-target="სანახაობა" class="filter-btn" id="btn-sightseeing"><i class="fa-solid fa-camera"></i> <span>სანახაობები</span></a></li>
+                <li><a href="#" data-target="რესტორანი" class="filter-btn" id="btn-restaurant"><i class="fa-solid fa-utensils"></i> <span>სად ვჭამოთ</span></a></li>
+                <li><a href="#" data-target="შოპინგი" class="filter-btn" id="btn-shopping"><i class="fa-solid fa-bag-shopping"></i> <span>შოპინგი</span></a></li>
+            </ul>
+        </nav>
 
         <div id="exchange-rates" 
              data-gel="{{ rates.GEL }}" 
