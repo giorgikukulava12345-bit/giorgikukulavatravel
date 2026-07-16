@@ -322,7 +322,6 @@
                 font-size: 11px;
             }
 
-            /* მობილურზე ნავიგაციის ტექსტი და ხატულები პატარავდება */
             nav ul {
                 gap: 3px;
             }
@@ -334,7 +333,7 @@
             }
 
             nav ul li a i {
-                font-size: 10px; /* ხატულის ზომა */
+                font-size: 10px;
             }
 
             .hero {
@@ -414,6 +413,7 @@
                 <li><a href="#" data-target="სანახაობა" class="filter-btn" id="btn-sightseeing"><i class="fa-solid fa-camera"></i> <span>სანახაობები</span></a></li>
                 <li><a href="#" data-target="რესტორანი" class="filter-btn" id="btn-restaurant"><i class="fa-solid fa-utensils"></i> <span>სად ვჭამოთ</span></a></li>
                 <li><a href="#" data-target="შოპინგი" class="filter-btn" id="btn-shopping"><i class="fa-solid fa-bag-shopping"></i> <span>შოპინგი</span></a></li>
+                <li><a href="#itinerary" class="filter-btn" style="background-color: rgba(254, 187, 2, 0.2); border: 1px solid #febb02; color: #febb02;"><i class="fa-solid fa-calendar-days"></i> <span id="btn-plan">გეგმა</span></a></li>
             </ul>
         </nav>
 
@@ -467,6 +467,72 @@
         </div>
     </section>
 
+    <!-- 5-დღიანი ტურისტული მარშრუტი & რჩევები -->
+    <section id="itinerary" class="container" style="background-color: #ffffff; border-radius: 12px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        <h2 class="section-title" id="itinerary-title">პრაღა • 18–22 აგვისტო (მარშრუტი)</h2>
+        <p style="text-align: center; color: #003580; font-weight: bold; margin-bottom: 25px; font-size: 15px;">
+            <i class="fa-solid fa-hotel"></i> <span id="hotel-text">სასტუმრო: ibis Praha Old Town (18 აგვისტოდან)</span>
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+            <!-- 18 აგვისტო -->
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #003580;">
+                <h3 style="color: #003580; margin-bottom: 10px; font-size: 16px;"><i class="fa-regular fa-calendar-check"></i> <span class="day-18-title">18 აგვისტო</span></h3>
+                <ul style="list-style: none; line-height: 1.8; font-size: 13px; color: #4a5568;" class="day-18-list">
+                    <li>• დასვენება სასტუმროში</li>
+                    <li>• Palladium სავაჭრო ცენტრი</li>
+                    <li>• ძველი ქალაქის მოედანი</li>
+                    <li>• ასტრონომიული საათი</li>
+                    <li>• კარლის ხიდი მზის ჩასვლისას</li>
+                    <li>• ვახშამი მდინარის მიმდებარე რესტორანში</li>
+                </ul>
+            </div>
+
+            <!-- 19 აგვისტო -->
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #003580;">
+                <h3 style="color: #003580; margin-bottom: 10px; font-size: 16px;"><i class="fa-regular fa-calendar-check"></i> <span class="day-19-title">19 აგვისტო</span></h3>
+                <ul style="list-style: none; line-height: 1.8; font-size: 13px; color: #4a5568;" class="day-19-list">
+                    <li>• პრაღის ციხე (~450 CZK)</li>
+                    <li>• წმინდა ვიტუსის ტაძარი</li>
+                    <li>• ოქროს ქუჩა</li>
+                    <li>• მალა სტრანა</li>
+                    <li>• <b>რეკომენდაცია:</b> Lokál Dlouhááá (ვახშამი + ლუდი)</li>
+                </ul>
+            </div>
+
+            <!-- 20 აგვისტო -->
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #003580;">
+                <h3 style="color: #003580; margin-bottom: 10px; font-size: 16px;"><i class="fa-regular fa-calendar-check"></i> <span class="day-20-title">20 აგვისტო (საბავშვო დღე)</span></h3>
+                <ul style="list-style: none; line-height: 1.8; font-size: 13px; color: #4a5568;" class="day-20-list">
+                    <li>• პრაღის ზოოპარკი (~330 CZK / ბავშვი 250 CZK)</li>
+                    <li>• ნავით გასეირნება ვლტავაზე (350-600 CZK)</li>
+                    <li>• სათამაშოების მუზეუმი ან Mirror Maze პეტრინზე</li>
+                    <li>• <b>რეკომენდაცია:</b> Loď Pivovar (საღამო მდინარის ხედით)</li>
+                </ul>
+            </div>
+
+            <!-- 21 აგვისტო -->
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #003580;">
+                <h3 style="color: #003580; margin-bottom: 10px; font-size: 16px;"><i class="fa-regular fa-calendar-check"></i> <span class="day-21-title">21 აგვისტო</span></h3>
+                <ul style="list-style: none; line-height: 1.8; font-size: 13px; color: #4a5568;" class="day-21-list">
+                    <li>• ვაცლავის მოედანი</li>
+                    <li>• ფრანც კაფკას მოძრავი თავი</li>
+                    <li>• სუვენირების ყიდვა</li>
+                    <li>• ძველ ქალაქში მშვიდი გასეირნება</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- სასარგებლო რჩევები -->
+        <div style="margin-top: 25px; background: #eef4ff; padding: 20px; border-radius: 10px;">
+            <h4 style="color: #003580; margin-bottom: 10px; font-size: 15px;"><i class="fa-solid fa-lightbulb"></i> <span id="tips-title">სასარგებლო რჩევები & ლუდები</span></h4>
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #2c3e50;">
+                <div><b>🍺 აუცილებლად გასასინჯი ლუდები:</b> Pilsner Urquell, Kozel, Budvar, U Fleků-ს მუქი ლუდი.</div>
+                <div><b>💡 რჩევები:</b> ატარეთ კომფორტული ფეხსაცმელი, წყლის ბოთლი თან იქონიეთ, ბარათით გადახდა თითქმის ყველგან შესაძლებელია.</div>
+            </div>
+        </div>
+    </section>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const currencySelect = document.getElementById("currency-select");
@@ -511,6 +577,7 @@
                     sightseeing: "სანახაობები",
                     restaurant: "სად ვჭამოთ",
                     shopping: "შოპინგი",
+                    plan: "გეგმა",
                     heroTitle: "აღმოაჩინე ჩეხეთი",
                     heroSubtitle: "საუკეთესო ლოკაციები, რეალური ფასები და საიდუმლო ადგილები ერთ სივრცეში.",
                     heroBtn: "დაიწყე ძებნა",
@@ -521,6 +588,7 @@
                     sightseeing: "Sightseeing",
                     restaurant: "Restaurants",
                     shopping: "Shopping",
+                    plan: "Itinerary",
                     heroTitle: "Discover Czechia",
                     heroSubtitle: "Best locations, real prices, and hidden spots in one place.",
                     heroBtn: "Start Exploring",
@@ -536,6 +604,7 @@
                 document.querySelector("#btn-sightseeing span").textContent = texts.sightseeing;
                 document.querySelector("#btn-restaurant span").textContent = texts.restaurant;
                 document.querySelector("#btn-shopping span").textContent = texts.shopping;
+                document.querySelector("#btn-plan").textContent = texts.plan;
 
                 document.getElementById("hero-title").textContent = texts.heroTitle;
                 document.getElementById("hero-subtitle").textContent = texts.heroSubtitle;
@@ -567,6 +636,9 @@
 
             filterButtons.forEach(button => {
                 button.addEventListener("click", function (e) {
+                    // თუ იტირენარის ღილაკია, ფილტრაცია არ გააკეთოს
+                    if (this.getAttribute("href") === "#itinerary") return;
+
                     e.preventDefault();
                     filterButtons.forEach(btn => btn.classList.remove("active"));
                     this.classList.add("active");
