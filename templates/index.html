@@ -39,7 +39,7 @@
         /* Header / Navigation */
         header {
             background-color: #ffffff;
-            padding: 14px 6%;
+            padding: 12px 5%;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -51,23 +51,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             color: var(--dark);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             letter-spacing: -0.5px;
         }
 
         .logo i {
             color: var(--primary);
-            font-size: 26px;
+            font-size: 24px;
         }
 
         .logo span {
@@ -77,17 +77,17 @@
         .controls-group {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .select-styled {
             background-color: #f0f0f0;
             color: var(--dark);
             border: 1px solid transparent;
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: var(--radius-pill);
             font-weight: 600;
-            font-size: 13px;
+            font-size: 12px;
             outline: none;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -97,39 +97,46 @@
             background-color: #e5e5e5;
         }
 
-        /* Nav Category Tabs */
+        /* Nav Category Tabs - Horizontal Scroll Mobile Optimization */
         nav {
             width: 100%;
             overflow-x: auto;
             white-space: nowrap;
-            scrollbar-width: none;
+            scrollbar-width: none; /* Firefox-ისთვის */
+            -webkit-overflow-scrolling: touch; /* iOS-ზე გლუვი სქროლისთვის */
+            padding-bottom: 2px;
         }
 
         nav::-webkit-scrollbar {
-            display: none;
+            display: none; /* Chrome/Safari-სთვის */
         }
 
         nav ul {
-            display: flex;
+            display: inline-flex; /* მობილურზე რომ არ შეიკუმშოს */
             justify-content: center;
             list-style: none;
-            gap: 10px;
-            width: 100%;
+            gap: 8px;
+            min-width: 100%;
+        }
+
+        nav ul li {
+            flex-shrink: 0; /* ღილაკები რომ არ დაპატარავდეს მობილურზე */
         }
 
         nav ul li a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 600;
-            font-size: 14px;
-            padding: 8px 18px;
+            font-size: 13.5px;
+            padding: 8px 16px;
             border-radius: var(--radius-pill);
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             background-color: #f5f5f5;
             border: 1px solid #e8e8e8;
+            white-space: nowrap;
         }
 
         nav ul li a:hover {
@@ -149,7 +156,7 @@
         /* Hero Section */
         .hero {
             background: #ffffff;
-            padding: 50px 20px 40px 20px;
+            padding: 40px 16px 30px 16px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
@@ -160,17 +167,17 @@
         }
 
         .hero-content h1 {
-            font-size: 42px;
+            font-size: 36px;
             font-weight: 800;
             color: var(--dark);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             letter-spacing: -1px;
         }
 
         .hero-content p {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--gray-text);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .btn {
@@ -179,11 +186,11 @@
             justify-content: center;
             background-color: var(--primary);
             color: white;
-            padding: 12px 30px;
+            padding: 11px 26px;
             text-decoration: none;
             border-radius: var(--radius-pill);
             font-weight: 700;
-            font-size: 15px;
+            font-size: 14px;
             transition: all 0.2s ease;
             box-shadow: 0 4px 12px rgba(0, 170, 108, 0.25);
         }
@@ -197,13 +204,13 @@
         .container {
             max-width: 1240px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 30px 16px;
         }
 
         .section-title {
             text-align: left;
-            margin-bottom: 30px;
-            font-size: 28px;
+            margin-bottom: 24px;
+            font-size: 24px;
             font-weight: 800;
             color: var(--dark);
             letter-spacing: -0.5px;
@@ -212,8 +219,8 @@
         /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 20px;
         }
 
         .card {
@@ -232,14 +239,14 @@
         }
 
         .card-img {
-            height: 200px;
+            height: 190px;
             background-size: cover;
             background-position: center;
             position: relative;
         }
 
         .card-body {
-            padding: 18px;
+            padding: 16px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -259,16 +266,16 @@
         }
 
         .card-body h3 {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: var(--dark);
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
         }
 
         .card-body p {
             color: var(--gray-text);
-            font-size: 13.5px;
-            margin-bottom: 16px;
+            font-size: 13px;
+            margin-bottom: 14px;
             flex-grow: 1;
             line-height: 1.5;
         }
@@ -313,7 +320,7 @@
 
         .price-display b {
             color: var(--dark);
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 800;
         }
 
@@ -324,7 +331,7 @@
             display: none;
             background: white;
             border-radius: var(--radius-md);
-            padding: 28px;
+            padding: 20px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
         }
@@ -333,24 +340,24 @@
             text-align: center;
             background: #f0f7ff;
             color: #0052cc;
-            padding: 14px;
+            padding: 12px;
             border-radius: var(--radius-md);
             font-weight: 700;
-            margin-bottom: 24px;
-            font-size: 14px;
+            margin-bottom: 20px;
+            font-size: 13.5px;
             border: 1px solid #d0e2ff;
         }
 
         .day-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 18px;
-            margin-bottom: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
         }
 
         .day-card {
             background: #fafafa;
-            padding: 18px;
+            padding: 16px;
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
             border-top: 4px solid var(--primary);
@@ -358,8 +365,8 @@
 
         .day-card h4 {
             color: var(--dark);
-            margin-bottom: 12px;
-            font-size: 15px;
+            margin-bottom: 10px;
+            font-size: 14.5px;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -412,18 +419,33 @@
             top: -2px;
         }
 
-        /* 📱 Mobile Responsive */
-        @media (max-width: 768px) {
-            header { padding: 12px 16px; }
-            .logo { font-size: 20px; }
-            .hero { padding: 35px 16px 25px 16px; }
-            .hero-content h1 { font-size: 28px; }
-            .hero-content p { font-size: 14px; }
-            nav ul { justify-content: flex-start; }
-            nav ul li a { padding: 6px 14px; font-size: 12.5px; }
-            .container { padding: 20px 14px; }
-            .section-title { font-size: 22px; margin-bottom: 20px; }
+        /* 📱 Mobile Responsive Specific Adjustments */
+        @media (max-width: 600px) {
+            header { padding: 10px 12px; }
+            .logo { font-size: 18px; }
+            .select-styled { padding: 4px 8px; font-size: 11px; }
+
+            nav ul {
+                justify-content: flex-start; /* მობილურზე მარცხნიდან დაიწყოს */
+                padding-right: 16px; /* მარჯვენა მხარეს დამატებითი სივრცე სქროლისთვის */
+            }
+
+            nav ul li a {
+                padding: 7px 13px;
+                font-size: 12px;
+                gap: 5px;
+            }
+
+            .hero { padding: 25px 12px 20px 12px; }
+            .hero-content h1 { font-size: 24px; }
+            .hero-content p { font-size: 13px; margin-bottom: 15px; }
+
+            .container { padding: 16px 12px; }
+            .section-title { font-size: 20px; margin-bottom: 16px; }
+
+            .cards-grid { grid-template-columns: 1fr; } /* მობილურზე 1 სვეტად */
             .day-grid { grid-template-columns: 1fr; }
+            .itinerary-container { padding: 14px; }
         }
     </style>
 </head>
@@ -567,8 +589,8 @@
             </div>
 
             <!-- რესტორნები -->
-            <div style="background: #fafafa; padding: 20px; border-radius: var(--radius-md); margin-bottom: 20px; border: 1px solid var(--border-color);">
-                <h4 style="color: var(--dark); margin-bottom: 12px; font-size: 15px; font-weight: 700;"><i class="fa-solid fa-utensils"></i> სად ვისადილოთ / ვისაუზმოთ</h4>
+            <div style="background: #fafafa; padding: 16px; border-radius: var(--radius-md); margin-bottom: 16px; border: 1px solid var(--border-color);">
+                <h4 style="color: var(--dark); margin-bottom: 10px; font-size: 14px; font-weight: 700;"><i class="fa-solid fa-utensils"></i> სად ვისადილოთ / ვისაუზმოთ</h4>
                 <ul class="list-styled">
                     <li><a href="https://www.google.com/maps/search/?api=1&query=Havelska+Koruna+Prague" target="_blank" class="map-item"><b>Havelská Koruna</b> <i class="fa-solid fa-location-dot"></i></a>: <b>200–350 CZK (~25–43 GEL)</b>. ბიუჯეტური არჩევანი.</li>
                     <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: <b>250–450 CZK (~31–56 GEL)</b>. ტრადიციული კერძები.</li>
@@ -578,8 +600,8 @@
             </div>
 
             <!-- ბილეთები & რჩევები -->
-            <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius-md); margin-bottom: 20px; border: 1px solid #d0e2ff;">
-                <h4 style="color: #0052cc; margin-bottom: 12px; font-size: 15px; font-weight: 700;"><i class="fa-solid fa-circle-info"></i> ბილეთები & რჩევები</h4>
+            <div style="background: #f0f7ff; padding: 16px; border-radius: var(--radius-md); margin-bottom: 16px; border: 1px solid #d0e2ff;">
+                <h4 style="color: #0052cc; margin-bottom: 10px; font-size: 14px; font-weight: 700;"><i class="fa-solid fa-circle-info"></i> ბილეთები & რჩევები</h4>
                 <ul class="list-styled">
                     <li><b>პრაღის ციხე:</b> ~<b>450 CZK (~56 GEL)</b> ზრდასრული.</li>
                     <li><b>ზოოპარკი:</b> ~<b>330 CZK (~41 GEL)</b> ზრდასრული, <b>250 CZK (~31 GEL)</b> ბავშვი.</li>
@@ -590,13 +612,13 @@
             </div>
 
             <!-- ჯამური სავარაუდო ბიუჯეტი 1 ადამიანზე -->
-            <div style="background: #eaf7f2; padding: 20px; border-radius: var(--radius-md); border-left: 5px solid var(--primary);">
-                <h4 style="color: var(--primary-hover); margin-bottom: 8px; font-size: 15px; font-weight: 700;"><i class="fa-solid fa-wallet"></i> სავარაუდო ბიუჯეტი 1 ადამიანზე (4 დღე)</h4>
-                <p style="font-size: 14px; color: var(--dark); margin-bottom: 5px;">
+            <div style="background: #eaf7f2; padding: 16px; border-radius: var(--radius-md); border-left: 5px solid var(--primary);">
+                <h4 style="color: var(--primary-hover); margin-bottom: 8px; font-size: 14px; font-weight: 700;"><i class="fa-solid fa-wallet"></i> სავარაუდო ბიუჯეტი 1 ადამიანზე (4 დღე)</h4>
+                <p style="font-size: 13px; color: var(--dark); margin-bottom: 5px;">
                     • <b>საჭირო თანხა (ატრაქციონები, კვება, ტრანსპორტი):</b> 
                     <b>3,500–4,900 CZK (~430–610 GEL)</b>
                 </p>
-                <span style="font-size: 12px; color: var(--gray-text);">* არ მოიცავს სასტუმროსა და ავიაბილეთების ღირებულებას.</span>
+                <span style="font-size: 11.5px; color: var(--gray-text);">* არ მოიცავს სასტუმროსა და ავიაბილეთების ღირებულებას.</span>
             </div>
         </div>
     </section>
