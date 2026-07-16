@@ -69,17 +69,12 @@
             transition: all 0.2s ease;
         }
 
-        .select-styled:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-color: #ffffff;
-        }
-
         .select-styled option {
             background-color: #003580;
             color: #ffffff;
         }
 
-        /* Nav Header */
+        /* Nav Header - 4 კატეგორია */
         nav {
             width: 100%;
             overflow-x: auto;
@@ -110,7 +105,7 @@
             color: #ffffff;
             font-weight: 500;
             font-size: 13px;
-            padding: 7px 10px;
+            padding: 7px 8px;
             border-radius: 20px;
             transition: all 0.2s ease;
             display: flex;
@@ -135,8 +130,8 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1541849546-216549ae216d?q=80&w=1600') no-repeat center center/cover;
-            height: 55vh;
-            min-height: 380px;
+            height: 45vh;
+            min-height: 320px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -150,15 +145,15 @@
         }
 
         .hero-content h1 {
-            font-size: 40px;
-            margin-bottom: 12px;
+            font-size: 36px;
+            margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
             line-height: 1.2;
         }
 
         .hero-content p {
-            font-size: 18px;
-            margin-bottom: 22px;
+            font-size: 16px;
+            margin-bottom: 18px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
             opacity: 0.95;
         }
@@ -167,29 +162,24 @@
             display: inline-block;
             background-color: #006ce4;
             color: white;
-            padding: 12px 28px;
+            padding: 10px 24px;
             text-decoration: none;
             border-radius: 25px;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 14px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 108, 228, 0.4);
         }
 
-        .btn:hover {
-            background-color: #0057b8;
-            transform: translateY(-2px);
-        }
-
         /* Container & Cards */
         .container {
-            padding: 40px 5%;
+            padding: 30px 5%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 28px;
+            margin-bottom: 25px;
+            font-size: 26px;
             color: #2c3e50;
             position: relative;
         }
@@ -207,7 +197,7 @@
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 20px;
         }
 
         .card {
@@ -220,19 +210,14 @@
             transition: transform 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
         .card-img {
-            height: 200px;
+            height: 190px;
             background-size: cover;
             background-position: center;
         }
 
         .card-body {
-            padding: 20px;
+            padding: 18px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -247,20 +232,19 @@
             font-size: 11px;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .card-body h3 {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #2c3e50;
-            font-size: 18px;
+            font-size: 17px;
         }
 
         .card-body p {
             color: #718096;
             font-size: 13px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             flex-grow: 1;
             line-height: 1.5;
         }
@@ -272,9 +256,9 @@
             font-size: 12px;
             color: #003580;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             border-top: 1px dashed #edf2f7;
-            padding-top: 10px;
+            padding-top: 8px;
         }
 
         .card-footer {
@@ -284,7 +268,7 @@
             font-size: 12px;
             color: #718096;
             border-top: 1px solid #edf2f7;
-            padding-top: 12px;
+            padding-top: 10px;
             margin-top: auto;
         }
 
@@ -294,11 +278,7 @@
             font-weight: 500;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
-        }
-
-        .map-link:hover {
-            color: #003580;
+            gap: 4px;
         }
 
         .price-display b {
@@ -306,80 +286,107 @@
             font-size: 14px;
         }
 
-        /* =========================================================
-           📱 MOBILE ADAPTIVE STYLES (მობილურის ოპტიმიზაცია)
-           ========================================================= */
+        /* ---------------------------------------------------------
+           გეგმის (Itinerary) სექცია
+           --------------------------------------------------------- */
+        .itinerary-container {
+            display: none; /* ნაგულისხმევად დამალულია */
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .hotel-badge {
+            text-align: center;
+            background: #eef4ff;
+            color: #003580;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .day-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .day-card {
+            background: #f8f9fa;
+            padding: 14px;
+            border-radius: 10px;
+            border-left: 4px solid #003580;
+        }
+
+        .day-card h4 {
+            color: #003580;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .day-card ul {
+            list-style: none;
+            font-size: 12.5px;
+            color: #4a5568;
+        }
+
+        .day-card ul li {
+            margin-bottom: 6px;
+        }
+
+        .map-item {
+            color: #2c3e50;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .map-item:hover {
+            color: #003580;
+            text-decoration: underline;
+        }
+
+        .list-styled {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .list-styled li {
+            margin-bottom: 8px;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .list-styled li::before {
+            content: "•";
+            color: #003580;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 📱 MOBILE ADAPTIVE */
         @media (max-width: 600px) {
-            header {
-                padding: 10px 8px;
-            }
+            header { padding: 10px 8px; }
+            .logo { font-size: 18px; }
+            .select-styled { padding: 3px 6px; font-size: 11px; }
 
-            .logo {
-                font-size: 18px;
-            }
+            nav ul { gap: 2px; }
+            nav ul li a { padding: 6px 4px; font-size: 11px; gap: 3px; }
+            nav ul li a i { font-size: 10px; }
 
-            .select-styled {
-                padding: 3px 6px;
-                font-size: 11px;
-            }
+            .hero { height: 40vh; min-height: 260px; padding: 0 15px; }
+            .hero-content h1 { font-size: 22px; }
+            .hero-content p { font-size: 12px; }
 
-            nav ul {
-                gap: 3px;
-            }
-
-            nav ul li a {
-                padding: 5px 6px;
-                font-size: 11px;
-                gap: 3px;
-            }
-
-            nav ul li a i {
-                font-size: 10px;
-            }
-
-            .hero {
-                height: 45vh;
-                min-height: 290px;
-                padding: 0 15px;
-            }
-
-            .hero-content h1 {
-                font-size: 24px;
-                margin-bottom: 8px;
-            }
-
-            .hero-content p {
-                font-size: 13px;
-                margin-bottom: 16px;
-                line-height: 1.4;
-            }
-
-            .btn {
-                padding: 9px 20px;
-                font-size: 13px;
-            }
-
-            .container {
-                padding: 20px 12px;
-            }
-
-            .section-title {
-                font-size: 20px;
-                margin-bottom: 18px;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            .card-img {
-                height: 170px;
-            }
-
-            .card-body {
-                padding: 14px;
-            }
+            .container { padding: 15px 10px; }
+            .section-title { font-size: 20px; }
+            .day-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -407,14 +414,13 @@
             </div>
         </div>
 
-        <!-- ნავიგაცია -->
+        <!-- ნავიგაცია - 4 კატეგორია -->
         <nav>
             <ul>
-                <li><a href="#" data-target="all" class="filter-btn active" id="btn-all"><i class="fa-solid fa-layer-group"></i> <span>ყველა</span></a></li>
-                <li><a href="#" data-target="სანახაობა" class="filter-btn" id="btn-sightseeing"><i class="fa-solid fa-camera"></i> <span>სანახაობები</span></a></li>
+                <li><a href="#" data-target="სანახაობა" class="filter-btn active" id="btn-sightseeing"><i class="fa-solid fa-camera"></i> <span>სანახაობები</span></a></li>
                 <li><a href="#" data-target="რესტორანი" class="filter-btn" id="btn-restaurant"><i class="fa-solid fa-utensils"></i> <span>სად ვჭამოთ</span></a></li>
                 <li><a href="#" data-target="შოპინგი" class="filter-btn" id="btn-shopping"><i class="fa-solid fa-bag-shopping"></i> <span>შოპინგი</span></a></li>
-                <li><a href="/itinerary" style="background-color: rgba(254, 187, 2, 0.2); border: 1px solid #febb02; color: #febb02;"><i class="fa-solid fa-calendar-days"></i> <span id="btn-plan">გეგმა</span></a></li>
+                <li><a href="#" data-target="გეგმა" class="filter-btn" id="btn-plan"><i class="fa-solid fa-calendar-days"></i> <span>გეგმა</span></a></li>
             </ul>
         </nav>
 
@@ -429,15 +435,16 @@
         <div class="hero-content">
             <h1 id="hero-title">აღმოაჩინე ჩეხეთი</h1>
             <p id="hero-subtitle">საუკეთესო ლოკაციები, რეალური ფასები და საიდუმლო ადგილები ერთ სივრცეში.</p>
-            <a href="#sightseeing" class="btn" id="hero-btn">დაიწყე ძებნა</a>
+            <a href="#main-content" class="btn" id="hero-btn">დაიწყე ძებნა</a>
         </div>
     </section>
 
-    <!-- Cards -->
-    <section id="sightseeing" class="container">
-        <h2 class="section-title" id="section-title">რეკომენდებული ადგილები</h2>
+    <!-- Main Content Area -->
+    <section id="main-content" class="container">
+        <h2 class="section-title" id="section-title">სანახაობები</h2>
         
-        <div class="cards-grid">
+        <!-- ბარათების გრიდი -->
+        <div class="cards-grid" id="cards-container">
             {% for loc in locations %}
             <div class="card" data-category="{{ loc.category }}">
                 <div class="card-img" style="background-image: url('{{ loc.image }}');"></div>
@@ -466,6 +473,84 @@
             </div>
             {% endfor %}
         </div>
+
+        <!-- 5-დღიანი გეგმის კონტეინერი (იხსნება მხოლოდ 'გეგმა'-ზე დაჭერისას) -->
+        <div id="itinerary-block" class="itinerary-container">
+            <div class="hotel-badge">
+                <i class="fa-solid fa-hotel"></i> სასტუმრო: 
+                <a href="https://www.google.com/maps/search/?api=1&query=ibis+Praha+Old+Town" target="_blank" class="map-item">
+                    <b>ibis Praha Old Town</b> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a> (18 აგვისტოდან)
+            </div>
+
+            <!-- დღიური ბარათები -->
+            <div class="day-grid">
+                <div class="day-card">
+                    <h4><i class="fa-regular fa-calendar-check"></i> 18 აგვისტო</h4>
+                    <ul>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=ibis+Praha+Old+Town" target="_blank" class="map-item">დასვენება სასტუმროში <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Palladium+Prague" target="_blank" class="map-item">Palladium სავაჭრო ცენტრი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Old+Town+Square+Prague" target="_blank" class="map-item">ძველი ქალაქის მოედანი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Astronomical+Clock+Prague" target="_blank" class="map-item">ასტრონომიული საათი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Charles+Bridge+Prague" target="_blank" class="map-item">კარლის ხიდი მზის ჩასვლისას <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• ვახშამი მდინარის პირას</li>
+                    </ul>
+                </div>
+
+                <div class="day-card">
+                    <h4><i class="fa-regular fa-calendar-check"></i> 19 აგვისტო</h4>
+                    <ul>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Prague+Castle" target="_blank" class="map-item">პრაღის ციხე <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=St.+Vitus+Cathedral+Prague" target="_blank" class="map-item">წმინდა ვიტუსის ტაძარი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Golden+Lane+Prague" target="_blank" class="map-item">ოქროს ქუჩა <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Mala+Strana+Prague" target="_blank" class="map-item">მალა სტრანა <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <b>რეკომენდაცია:</b> <a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="day-card">
+                    <h4><i class="fa-regular fa-calendar-check"></i> 20 აგვისტო (საბავშვო)</h4>
+                    <ul>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Prague+Zoo" target="_blank" class="map-item">პრაღის ზოოპარკი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• ნავით გასეირნება ვლტავაზე</li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Petrin+Mirror+Maze+Prague" target="_blank" class="map-item">Mirror Maze პეტრინზე <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <b>რეკომენდაცია:</b> <a href="https://www.google.com/maps/search/?api=1&query=Lod+Pivovar+Prague" target="_blank" class="map-item"><b>Loď Pivovar</b> <i class="fa-solid fa-location-dot"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="day-card">
+                    <h4><i class="fa-regular fa-calendar-check"></i> 21 აგვისტო</h4>
+                    <ul>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Wenceslas+Square+Prague" target="_blank" class="map-item">ვაცლავის მოედანი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Franz+Kafka+-+Rotating+Head+Prague" target="_blank" class="map-item">ფრანც კაფკას მოძრავი თავი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• სუვენირების ყიდვა</li>
+                        <li>• ძველ ქალაქში გასეირნება</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- რესტორნები და რჩევები -->
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 15px;">
+                <h4 style="color: #003580; margin-bottom: 8px; font-size: 14px;"><i class="fa-solid fa-utensils"></i> სად ვისადილოთ / ვისაუზმოთ</h4>
+                <ul class="list-styled">
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=Havelska+Koruna+Prague" target="_blank" class="map-item"><b>Havelská Koruna</b> <i class="fa-solid fa-location-dot"></i></a>: 200–350 CZK. ბიუჯეტური არჩევანი.</li>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: 250–450 CZK. ტრადიციული კერძები.</li>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=Pizza+Nuova+Prague" target="_blank" class="map-item"><b>Pizza Nuova</b> <i class="fa-solid fa-location-dot"></i></a>: პიცა/პასტა ბავშვებთან ერთად.</li>
+                    <li><a href="https://www.google.com/maps/search/?api=1&query=Cafe+Imperial+Prague" target="_blank" class="map-item"><b>Café Imperial</b> <i class="fa-solid fa-location-dot"></i></a>: ულამაზესი ინტერიერი.</li>
+                </ul>
+            </div>
+
+            <div style="background: #eef4ff; padding: 15px; border-radius: 10px;">
+                <h4 style="color: #003580; margin-bottom: 8px; font-size: 14px;"><i class="fa-solid fa-circle-info"></i> ბილეთები & რჩევები</h4>
+                <ul class="list-styled">
+                    <li><b>პრაღის ციხე:</b> ~450 CZK ზრდასრული.</li>
+                    <li><b>ზოოპარკი:</b> ~330 CZK ზრდასრული, 250 CZK ბავშვი.</li>
+                    <li><b>კრუიზი ვლტავაზე:</b> ~350–600 CZK.</li>
+                    <li><b>ლუდები:</b> Pilsner Urquell, Kozel, Budvar, U Fleků.</li>
+                    <li><b>რჩევები:</b> ატარეთ კომფორტული ფეხსაცმელი, წყლის ბოთლი თან იქონიეთ, ბარათით გადახდა თითქმის ყველგან შესაძლებელია.</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <script>
@@ -482,7 +567,7 @@
                 CZK: 1.0
             };
 
-            // 1. ვალუტის გადაყვანის ფუნქცია
+            // 1. ვალუტის გადაყვანა
             function updatePrices() {
                 const selectedCurrency = currencySelect.value;
                 const rate = rates[selectedCurrency];
@@ -505,10 +590,9 @@
                 });
             }
 
-            // 2. ენის შეცვლის ლოგიკა
+            // 2. ენის შეცვლა
             const i18n = {
                 KA: {
-                    all: "ყველა",
                     sightseeing: "სანახაობები",
                     restaurant: "სად ვჭამოთ",
                     shopping: "შოპინგი",
@@ -516,10 +600,9 @@
                     heroTitle: "აღმოაჩინე ჩეხეთი",
                     heroSubtitle: "საუკეთესო ლოკაციები, რეალური ფასები და საიდუმლო ადგილები ერთ სივრცეში.",
                     heroBtn: "დაიწყე ძებნა",
-                    secTitle: "რეკომენდებული ადგილები"
+                    planTitle: "18–22 აგვისტოს გეგმა"
                 },
                 EN: {
-                    all: "All",
                     sightseeing: "Sightseeing",
                     restaurant: "Restaurants",
                     shopping: "Shopping",
@@ -527,7 +610,7 @@
                     heroTitle: "Discover Czechia",
                     heroSubtitle: "Best locations, real prices, and hidden spots in one place.",
                     heroBtn: "Start Exploring",
-                    secTitle: "Recommended Places"
+                    planTitle: "August 18–22 Itinerary"
                 }
             };
 
@@ -535,18 +618,15 @@
                 const lang = langSelect.value;
                 const texts = i18n[lang];
 
-                document.querySelector("#btn-all span").textContent = texts.all;
                 document.querySelector("#btn-sightseeing span").textContent = texts.sightseeing;
                 document.querySelector("#btn-restaurant span").textContent = texts.restaurant;
                 document.querySelector("#btn-shopping span").textContent = texts.shopping;
-                document.querySelector("#btn-plan").textContent = texts.plan;
+                document.querySelector("#btn-plan span").textContent = texts.plan;
 
                 document.getElementById("hero-title").textContent = texts.heroTitle;
                 document.getElementById("hero-subtitle").textContent = texts.heroSubtitle;
                 document.getElementById("hero-btn").textContent = texts.heroBtn;
-                document.getElementById("section-title").textContent = texts.secTitle;
 
-                // ბარათების ტექსტებისა და ტეგების შეცვლა
                 document.querySelectorAll(".card").forEach(card => {
                     const desc = card.querySelector(".desc-text");
                     const tag = card.querySelector(".tag");
@@ -558,16 +638,15 @@
                 updatePrices();
             }
 
-            // ივენთები
             currencySelect.addEventListener("change", updatePrices);
             langSelect.addEventListener("change", updateLanguage);
 
-            // თავდაპირველი ჩატვირთვა (Default GEL)
-            updatePrices();
-
-            // კატეგორიების ფილტრაცია
+            // 3. კატეგორიების ფილტრაცია + გეგმის ჩვენება
             const filterButtons = document.querySelectorAll(".filter-btn");
             const cards = document.querySelectorAll(".card");
+            const cardsContainer = document.getElementById("cards-container");
+            const itineraryBlock = document.getElementById("itinerary-block");
+            const sectionTitle = document.getElementById("section-title");
 
             filterButtons.forEach(button => {
                 button.addEventListener("click", function (e) {
@@ -577,16 +656,31 @@
 
                     const targetCategory = this.getAttribute("data-target");
 
-                    cards.forEach(card => {
-                        const cardCategory = card.getAttribute("data-category");
-                        if (targetCategory === "all" || cardCategory === targetCategory) {
-                            card.style.display = "flex";
-                        } else {
-                            card.style.display = "none";
-                        }
-                    });
+                    if (targetCategory === "გეგმა") {
+                        // გეგმის ჩვენება
+                        cardsContainer.style.display = "none";
+                        itineraryBlock.style.display = "block";
+                        sectionTitle.textContent = langSelect.value === "EN" ? "August 18–22 Itinerary" : "18–22 აგვისტოს გეგმა";
+                    } else {
+                        // ბარათების ჩვენება
+                        itineraryBlock.style.display = "none";
+                        cardsContainer.style.display = "grid";
+                        sectionTitle.textContent = this.querySelector("span").textContent;
+
+                        cards.forEach(card => {
+                            const cardCategory = card.getAttribute("data-category");
+                            if (cardCategory === targetCategory) {
+                                card.style.display = "flex";
+                            } else {
+                                card.style.display = "none";
+                            }
+                        });
+                    }
                 });
             });
+
+            // თავდაპირველად გახსნას სანახაობები
+            document.getElementById("btn-sightseeing").click();
         });
     </script>
 </body>
