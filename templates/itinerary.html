@@ -51,6 +51,11 @@
             border-radius: 20px;
             font-size: 13px;
             border: 1px solid white;
+            transition: background 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255,255,255,0.25);
         }
 
         .container {
@@ -75,6 +80,11 @@
             font-weight: bold;
             margin-bottom: 25px;
             font-size: 14px;
+        }
+
+        .hotel-badge a {
+            color: #003580;
+            text-decoration: underline;
         }
 
         .section-box {
@@ -122,7 +132,27 @@
         }
 
         .day-card ul li {
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+        }
+
+        /* Google Maps ლინკების სტილი */
+        .map-item {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .map-item:hover {
+            color: #003580;
+            text-decoration: underline;
+        }
+
+        .map-item i {
+            font-size: 11px;
+            color: #003580;
         }
 
         .list-styled {
@@ -161,51 +191,58 @@
     <div class="container">
         <h1 class="page-title">პრაღა • 18–22 აგვისტო</h1>
         <div class="hotel-badge">
-            <i class="fa-solid fa-hotel"></i> სასტუმრო: ibis Praha Old Town (18 აგვისტოდან)
+            <i class="fa-solid fa-hotel"></i> სასტუმრო: 
+            <a href="https://www.google.com/maps/search/?api=1&query=ibis+Praha+Old+Town" target="_blank" class="map-item">
+                ibis Praha Old Town <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a> (18 აგვისტოდან)
         </div>
 
-        <!-- 1. დღიური მარშრუტი -->
+        <!-- 1. დღიური მარშრუტი Google Maps ლინკებით -->
         <div class="section-box">
             <h3><i class="fa-solid fa-calendar-days"></i> დღიური გეგმა</h3>
             <div class="day-grid">
+                <!-- 18 აგვისტო -->
                 <div class="day-card">
                     <h4>18 აგვისტო</h4>
                     <ul>
-                        <li>• დასვენება სასტუმროში</li>
-                        <li>• Palladium სავაჭრო ცენტრი</li>
-                        <li>• ძველი ქალაქის მოედანი</li>
-                        <li>• ასტრონომიული საათი</li>
-                        <li>• კარლის ხიდი მზის ჩასვლისას</li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=ibis+Praha+Old+Town" target="_blank" class="map-item">დასვენება სასტუმროში <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Palladium+Prague" target="_blank" class="map-item">Palladium სავაჭრო ცენტრი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Old+Town+Square+Prague" target="_blank" class="map-item">ძველი ქალაქის მოედანი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Astronomical+Clock+Prague" target="_blank" class="map-item">ასტრონომიული საათი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Charles+Bridge+Prague" target="_blank" class="map-item">კარლის ხიდი მზის ჩასვლისას <i class="fa-solid fa-location-dot"></i></a></li>
                         <li>• ვახშამი მდინარის პირას</li>
                     </ul>
                 </div>
 
+                <!-- 19 აგვისტო -->
                 <div class="day-card">
                     <h4>19 აგვისტო</h4>
                     <ul>
-                        <li>• პრაღის ციხე</li>
-                        <li>• წმინდა ვიტუსის ტაძარი</li>
-                        <li>• ოქროს ქუჩა</li>
-                        <li>• მალა სტრანა</li>
-                        <li>• <b>რეკომენდაცია:</b> Lokál Dlouhááá</li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Prague+Castle" target="_blank" class="map-item">პრაღის ციხე <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=St.+Vitus+Cathedral+Prague" target="_blank" class="map-item">წმინდა ვიტუსის ტაძარი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Golden+Lane+Prague" target="_blank" class="map-item">ოქროს ქუჩა <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Mala+Strana+Prague" target="_blank" class="map-item">მალა სტრანა <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <b>რეკომენდაცია:</b> <a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a></li>
                     </ul>
                 </div>
 
+                <!-- 20 აგვისტო -->
                 <div class="day-card">
                     <h4>20 აგვისტო (საბავშვო)</h4>
                     <ul>
-                        <li>• პრაღის ზოოპარკი</li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Prague+Zoo" target="_blank" class="map-item">პრაღის ზოოპარკი <i class="fa-solid fa-location-dot"></i></a></li>
                         <li>• ნავით გასეირნება ვლტავაზე</li>
-                        <li>• სათამაშოების მუზეუმი / Mirror Maze</li>
-                        <li>• <b>რეკომენდაცია:</b> Loď Pivovar</li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Petrin+Mirror+Maze+Prague" target="_blank" class="map-item">Mirror Maze პეტრინზე <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <b>რეკომენდაცია:</b> <a href="https://www.google.com/maps/search/?api=1&query=Lod+Pivovar+Prague" target="_blank" class="map-item"><b>Loď Pivovar</b> <i class="fa-solid fa-location-dot"></i></a></li>
                     </ul>
                 </div>
 
+                <!-- 21 აგვისტო -->
                 <div class="day-card">
                     <h4>21 აგვისტო</h4>
                     <ul>
-                        <li>• ვაცლავის მოედანი</li>
-                        <li>• ფრანც კაფკას მოძრავი თავი</li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Wenceslas+Square+Prague" target="_blank" class="map-item">ვაცლავის მოედანი <i class="fa-solid fa-location-dot"></i></a></li>
+                        <li>• <a href="https://www.google.com/maps/search/?api=1&query=Franz+Kafka+-+Rotating+Head+Prague" target="_blank" class="map-item">ფრანც კაფკას მოძრავი თავი <i class="fa-solid fa-location-dot"></i></a></li>
                         <li>• სუვენირების ყიდვა</li>
                         <li>• ძველ ქალაქში გასეირნება</li>
                     </ul>
@@ -217,18 +254,18 @@
         <div class="section-box">
             <h3><i class="fa-solid fa-utensils"></i> სად ვისადილოთ / ვისაუზმოთ (ibis-თან ახლოს)</h3>
             <ul class="list-styled">
-                <td><b>Havelská Koruna:</b> 200–350 CZK. საუკეთესო ბიუჯეტური არჩევანი.</td>
-                <li><b>Lokál Dlouhááá:</b> 250–450 CZK. ტრადიციული ჩეხური კერძები და ლუდი.</li>
-                <li><b>Pizza Nuova:</b> პიცა და პასტა, კარგი არჩევანია ბავშვებთან ერთად.</li>
-                <li><b>Café Imperial:</b> ლამაზი ინტერიერი და გემრიელი ჩეხური/ევროპული სამზარეულო.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Havelska+Koruna+Prague" target="_blank" class="map-item"><b>Havelská Koruna</b> <i class="fa-solid fa-location-dot"></i></a>: 200–350 CZK. საუკეთესო ბიუჯეტური არჩევანი.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: 250–450 CZK. ტრადიციული ჩეხური კერძები და ლუდი.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Pizza+Nuova+Prague" target="_blank" class="map-item"><b>Pizza Nuova</b> <i class="fa-solid fa-location-dot"></i></a>: პიცა და პასტა, კარგი არჩევანია ბავშვებთან ერთად.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Cafe+Imperial+Prague" target="_blank" class="map-item"><b>Café Imperial</b> <i class="fa-solid fa-location-dot"></i></a>: ლამაზი ინტერიერი და გემრიელი ჩეხური/ევროპული სამზარეულო.</li>
             </ul>
 
             <h4 style="margin: 15px 0 10px 0; color: #003580; font-size: 15px;">🍻 სად დავლიოთ კარგი ჩეხური ლუდი</h4>
             <ul class="list-styled">
-                <li><b>Staroměstský pivovar U Supa:</b> საკუთარი ლუდსახარში, სასტუმროდან 5-7 წუთი.</li>
-                <li><b>U Kunštátů:</b> კრაფტ ლუდების დიდი არჩევანი.</li>
-                <li><b>Lokál Dlouhááá:</b> ტანკიდან ჩამოცხელებული Pilsner Urquell.</li>
-                <li><b>Loď Pivovar:</b> ლუდი მდინარე ვლტავაზე ულამაზესი ხედით.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=U+Supa+Prague" target="_blank" class="map-item"><b>Staroměstský pivovar U Supa</b> <i class="fa-solid fa-location-dot"></i></a>: საკუთარი ლუდსახარში, სასტუმროდან 5-7 წუთი.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=U+Kunstatu+Prague" target="_blank" class="map-item"><b>U Kunštátů</b> <i class="fa-solid fa-location-dot"></i></a>: კრაფტ ლუდების დიდი არჩევანი.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: ტანკიდან ჩამოცხელებული Pilsner Urquell.</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Lod+Pivovar+Prague" target="_blank" class="map-item"><b>Loď Pivovar</b> <i class="fa-solid fa-location-dot"></i></a>: ლუდი მდინარე ვლტავაზე ულამაზესი ხედით.</li>
             </ul>
         </div>
 
