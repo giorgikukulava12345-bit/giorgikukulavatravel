@@ -78,40 +78,47 @@
             color: #ffffff;
         }
 
-        /* Nav Horizontal Scroll for Mobile */
+        /* Nav Header */
         nav {
             width: 100%;
             overflow-x: auto;
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-            padding-bottom: 2px;
+            scrollbar-width: none;
         }
 
         nav::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
         }
 
         nav ul {
-            display: inline-flex;
+            display: flex;
+            justify-content: space-between;
             list-style: none;
             gap: 6px;
-            padding-right: 15px; /* მარჯვენა მხარეს დაშორება სქროლისას */
+            width: 100%;
+        }
+
+        nav ul li {
+            flex: 1;
+            text-align: center;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #ffffff;
             font-weight: 500;
-            font-size: 12px;
-            padding: 6px 12px;
+            font-size: 13px;
+            padding: 7px 10px;
             border-radius: 20px;
             transition: all 0.2s ease;
-            display: inline-flex;
+            display: flex;
             align-items: center;
+            justify-content: center;
             gap: 5px;
             border: 1px solid transparent;
             white-space: nowrap;
+            width: 100%;
         }
 
         nav ul li a:hover {
@@ -303,11 +310,11 @@
            ========================================================= */
         @media (max-width: 600px) {
             header {
-                padding: 10px 12px;
+                padding: 10px 8px;
             }
 
             .logo {
-                font-size: 19px;
+                font-size: 18px;
             }
 
             .select-styled {
@@ -315,9 +322,24 @@
                 font-size: 11px;
             }
 
+            /* მობილურზე ნავიგაციის ტექსტი და ხატულები პატარავდება */
+            nav ul {
+                gap: 3px;
+            }
+
+            nav ul li a {
+                padding: 5px 6px;
+                font-size: 11px;
+                gap: 3px;
+            }
+
+            nav ul li a i {
+                font-size: 10px; /* ხატულის ზომა */
+            }
+
             .hero {
                 height: 45vh;
-                min-height: 300px;
+                min-height: 290px;
                 padding: 0 15px;
             }
 
@@ -385,7 +407,7 @@
             </div>
         </div>
 
-        <!-- ჰორიზონტალურად სქროლვადი ნავიგაცია -->
+        <!-- ნავიგაცია -->
         <nav>
             <ul>
                 <li><a href="#" data-target="all" class="filter-btn active" id="btn-all"><i class="fa-solid fa-layer-group"></i> <span>ყველა</span></a></li>
