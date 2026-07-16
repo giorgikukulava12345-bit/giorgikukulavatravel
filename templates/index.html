@@ -573,16 +573,17 @@
             const ratesContainer = document.getElementById("exchange-rates");
 
             const rates = {
-                GEL: parseFloat(ratesContainer.getAttribute("data-gel")) || 0.12,
+                GEL: parseFloat(ratesContainer.getAttribute("data-gel")) || 0.124,
                 USD: parseFloat(ratesContainer.getAttribute("data-usd")) || 0.043,
                 EUR: parseFloat(ratesContainer.getAttribute("data-eur")) || 0.040,
                 CZK: 1.0
             };
 
-            // 1. ვალუტის გადაყვანა
+            // 1. ვალუტის გადაყვანა (CZK-ს გვერდით ლარის ჩვენებით)
             function updatePrices() {
                 const selectedCurrency = currencySelect.value;
                 const rate = rates[selectedCurrency];
+                const gelRate = rates.GEL;
 
                 let symbol = selectedCurrency;
                 if (selectedCurrency === "GEL") symbol = "₾";
@@ -598,8 +599,13 @@
                         return;
                     }
 
-                    const convertedPrice = (basePrice * rate).toFixed(1);
-                    display.innerHTML = `<b>${convertedPrice} ${symbol}</b>`;
+                    if (selectedCurrency === "CZK") {
+                        const gelPrice = Math.round(basePrice * gelRate);
+                        display.innerHTML = `<b>${basePrice} CZK (${gelPrice} ₾)</b>`;
+                    } else {
+                        const convertedPrice = (basePrice * rate).toFixed(1);
+                        display.innerHTML = `<b>${convertedPrice} ${symbol}</b>`;
+                    }
                 });
 
                 // გეგმის სექციის ფასები
@@ -607,13 +613,24 @@
                     const minCzk = parseFloat(display.getAttribute("data-min-czk"));
                     const maxCzk = parseFloat(display.getAttribute("data-max-czk"));
 
-                    if (maxCzk) {
-                        const convMin = (minCzk * rate).toFixed(1);
-                        const convMax = (maxCzk * rate).toFixed(1);
-                        display.innerHTML = `<b>${convMin}–${convMax} ${symbol}</b>`;
-                    } else if (minCzk) {
-                        const convMin = (minCzk * rate).toFixed(1);
-                        display.innerHTML = `<b>${convMin} ${symbol}</b>`;
+                    if (selectedCurrency === "CZK") {
+                        if (maxCzk) {
+                            const minGel = Math.round(minCzk * gelRate);
+                            const maxGel = Math.round(maxCzk * gelRate);
+                            display.innerHTML = `<b>${minCzk}–${maxCzk} CZK (${minGel}–${maxGel} ₾)</b>`;
+                        } else if (minCzk) {
+                            const minGel = Math.round(minCzk * gelRate);
+                            display.innerHTML = `<b>${minCzk} CZK (${minGel} ₾)</b>`;
+                        }
+                    } else {
+                        if (maxCzk) {
+                            const convMin = (minCzk * rate).toFixed(1);
+                            const convMax = (maxCzk * rate).toFixed(1);
+                            display.innerHTML = `<b>${convMin}–${convMax} ${symbol}</b>`;
+                        } else if (minCzk) {
+                            const convMin = (minCzk * rate).toFixed(1);
+                            display.innerHTML = `<b>${convMin} ${symbol}</b>`;
+                        }
                     }
                 });
             }
