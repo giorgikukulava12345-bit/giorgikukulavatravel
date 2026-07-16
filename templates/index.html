@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ჩეხეთის გზამკვლევი</title>
+    <!-- Font Awesome ხატულები -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: BlinkMacSystemFont, -apple-system, Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #003580; /* Booking Dark Blue */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #febb02; /* Booking Yellow */
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid transparent;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav ul li a.active {
+            border: 1px solid #ffffff;
+            background-color: rgba(255, 255, 255, 0.15);
+            font-weight: 600;
+        }
+
+        /* ენისა და ვალუტის კონტროლერები */
+        .controls-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .select-styled {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .select-styled:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #ffffff;
+        }
+
+        .select-styled option {
+            background-color: #003580;
+            color: #ffffff;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1541849546-216549ae216d?q=80&w=1600') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #006ce4;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 108, 228, 0.4);
+        }
+
+        .btn:hover {
+            background-color: #0057b8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 108, 228, 0.6);
+        }
+
+        .container {
+            padding: 50px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #003580;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .tag {
+            align-self: flex-start;
+            background-color: #edf2f7;
+            color: #4a5568;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .card-body h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-size: 20px;
+        }
+
+        .card-body p {
+            color: #718096;
+            font-size: 14px;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .working-hours {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #003580;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border-top: 1px dashed #edf2f7;
+            padding-top: 10px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #718096;
+            border-top: 1px solid #edf2f7;
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        .map-link {
+            color: #718096;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .map-link:hover {
+            color: #003580;
+        }
+
+        .price-display b {
+            color: #2e7d32;
+            font-size: 15px;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 15px;
+            }
+            .header-right {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Czech<span>Guide</span></div>
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="#" data-target="all" class="filter-btn active" id="btn-all"><i class="fa-solid fa-layer-group"></i> <span>ყველა</span></a></li>
+                    <li><a href="#" data-target="სანახაობა" class="filter-btn" id="btn-sightseeing"><i class="fa-solid fa-camera"></i> <span>სანახაობები</span></a></li>
+                    <li><a href="#" data-target="რესტორანი" class="filter-btn" id="btn-restaurant"><i class="fa-solid fa-utensils"></i> <span>სად ვჭამოთ</span></a></li>
+                    <li><a href="#" data-target="შოპინგი" class="filter-btn" id="btn-shopping"><i class="fa-solid fa-bag-shopping"></i> <span>შოპინგი</span></a></li>
+                </ul>
+            </nav>
+            
+            <div class="controls-group">
+                <!-- ენის არჩევანი -->
+                <select id="lang-select" class="select-styled">
+                    <option value="KA">🇬🇪 KA</option>
+                    <option value="EN">🇬🇧 EN</option>
+                </select>
+
+                <!-- ვალუტის არჩევანი (Default: GEL) -->
+                <select id="currency-select" class="select-styled">
+                    <option value="GEL" selected>GEL (₾)</option>
+                    <option value="CZK">CZK</option>
+                    <option value="EUR">EUR (€)</option>
+                    <option value="USD">USD ($)</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="exchange-rates" 
+             data-gel="{{ rates.GEL }}" 
+             data-usd="{{ rates.USD }}" 
+             data-eur="{{ rates.EUR }}" style="display: none;"></div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 id="hero-title">აღმოაჩინე ჩეხეთი</h1>
+            <p id="hero-subtitle">საუკეთესო ლოკაციები, რეალური ფასები და საიდუმლო ადგილები ერთ სივრცეში.</p>
+            <a href="#sightseeing" class="btn" id="hero-btn">დაიწყე ძებნა</a>
+        </div>
+    </section>
+
+    <!-- Cards -->
+    <section id="sightseeing" class="container">
+        <h2 class="section-title" id="section-title">რეკომენდებული ადგილები</h2>
+        
+        <div class="cards-grid">
+            {% for loc in locations %}
+            <div class="card" data-category="{{ loc.category }}">
+                <div class="card-img" style="background-image: url('{{ loc.image }}');"></div>
+                <div class="card-body">
+                    <span class="tag" data-tag-ka="{{ loc.category }}" data-tag-en="{{ loc.category_en }}">{{ loc.category }}</span>
+                    <h3>{{ loc.title }}</h3>
+                    <p class="desc-text" data-ka="{{ loc.description_ka }}" data-en="{{ loc.description_en }}">{{ loc.description_ka }}</p>
+                    
+                    {% if loc.working_hours %}
+                    <div class="working-hours">
+                        <i class="fa-regular fa-clock"></i> <span>{{ loc.working_hours }}</span>
+                    </div>
+                    {% endif %}
+
+                    <div class="card-footer">
+                        <a href="https://www.google.com/maps/search/?api=1&query={{ loc.map_query | replace(' ', '+') }}" 
+                           target="_blank" 
+                           class="map-link">
+                            <i class="fa-solid fa-location-dot"></i> {{ loc.location }}
+                        </a>
+                        <span class="price-display" data-base-price="{{ loc.price_czk }}">
+                            {{ loc.price_text }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currencySelect = document.getElementById("currency-select");
+            const langSelect = document.getElementById("lang-select");
+            const priceDisplays = document.querySelectorAll(".price-display");
+            const ratesContainer = document.getElementById("exchange-rates");
+
+            const rates = {
+                GEL: parseFloat(ratesContainer.getAttribute("data-gel")) || 0.12,
+                USD: parseFloat(ratesContainer.getAttribute("data-usd")) || 0.043,
+                EUR: parseFloat(ratesContainer.getAttribute("data-eur")) || 0.040,
+                CZK: 1.0
+            };
+
+            // 1. ვალუტის გადაყვანის ფუნქცია
+            function updatePrices() {
+                const selectedCurrency = currencySelect.value;
+                const rate = rates[selectedCurrency];
+
+                priceDisplays.forEach(display => {
+                    const basePrice = parseFloat(display.getAttribute("data-base-price"));
+
+                    if (basePrice === 0) {
+                        display.textContent = langSelect.value === "EN" ? "Free" : "უფასო";
+                        return;
+                    }
+
+                    const convertedPrice = (basePrice * rate).toFixed(1);
+                    let symbol = selectedCurrency;
+                    if (selectedCurrency === "GEL") symbol = "₾";
+                    else if (selectedCurrency === "USD") symbol = "$";
+                    else if (selectedCurrency === "EUR") symbol = "€";
+
+                    display.innerHTML = `<b>${convertedPrice} ${symbol}</b>`;
+                });
+            }
+
+            // 2. ენის შეცვლის ლოგიკა
+            const i18n = {
+                KA: {
+                    all: "ყველა",
+                    sightseeing: "სანახაობები",
+                    restaurant: "სად ვჭამოთ",
+                    shopping: "შოპინგი",
+                    heroTitle: "აღმოაჩინე ჩეხეთი",
+                    heroSubtitle: "საუკეთესო ლოკაციები, რეალური ფასები და საიდუმლო ადგილები ერთ სივრცეში.",
+                    heroBtn: "დაიწყე ძებნა",
+                    secTitle: "რეკომენდებული ადგილები"
+                },
+                EN: {
+                    all: "All",
+                    sightseeing: "Sightseeing",
+                    restaurant: "Restaurants",
+                    shopping: "Shopping",
+                    heroTitle: "Discover Czechia",
+                    heroSubtitle: "Best locations, real prices, and hidden spots in one place.",
+                    heroBtn: "Start Exploring",
+                    secTitle: "Recommended Places"
+                }
+            };
+
+            function updateLanguage() {
+                const lang = langSelect.value;
+                const texts = i18n[lang];
+
+                document.querySelector("#btn-all span").textContent = texts.all;
+                document.querySelector("#btn-sightseeing span").textContent = texts.sightseeing;
+                document.querySelector("#btn-restaurant span").textContent = texts.restaurant;
+                document.querySelector("#btn-shopping span").textContent = texts.shopping;
+
+                document.getElementById("hero-title").textContent = texts.heroTitle;
+                document.getElementById("hero-subtitle").textContent = texts.heroSubtitle;
+                document.getElementById("hero-btn").textContent = texts.heroBtn;
+                document.getElementById("section-title").textContent = texts.secTitle;
+
+                // ბარათების ტექსტებისა და ტეგების შეცვლა
+                document.querySelectorAll(".card").forEach(card => {
+                    const desc = card.querySelector(".desc-text");
+                    const tag = card.querySelector(".tag");
+                    
+                    desc.textContent = lang === "EN" ? desc.getAttribute("data-en") : desc.getAttribute("data-ka");
+                    tag.textContent = lang === "EN" ? tag.getAttribute("data-tag-en") : tag.getAttribute("data-tag-ka");
+                });
+
+                updatePrices();
+            }
+
+            // ივენთები
+            currencySelect.addEventListener("change", updatePrices);
+            langSelect.addEventListener("change", updateLanguage);
+
+            // თავდაპირველი ჩატვირთვა (Default GEL)
+            updatePrices();
+
+            // კატეგორიების ფილტრაცია
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const cards = document.querySelectorAll(".card");
+
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    filterButtons.forEach(btn => btn.classList.remove("active"));
+                    this.classList.add("active");
+
+                    const targetCategory = this.getAttribute("data-target");
+
+                    cards.forEach(card => {
+                        const cardCategory = card.getAttribute("data-category");
+                        if (targetCategory === "all" || cardCategory === targetCategory) {
+                            card.style.display = "flex";
+                        } else {
+                            card.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

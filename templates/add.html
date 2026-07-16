@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ახალი ადგილის დამატება</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 550px;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h2 {
+            font-size: 26px;
+            color: #2c3e50;
+        }
+
+        .form-header h2 span {
+            color: #e74c3c;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #edf2f7;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            border-color: #e74c3c;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #e74c3c;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #c0392b;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #718096;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="form-header">
+            <h2>Czech<span>Guide</span> - ახალი ადგილი</h2>
+            <p style="color: #718096; margin-top: 5px;">შეავსეთ ფორმა ახალი ლოკაციის დასამატებლად</p>
+        </div>
+
+        <form action="/add" method="POST">
+            <div class="form-group">
+                <label for="title">სახელწოდება *</label>
+                <input type="text" id="title" name="title" placeholder="მაგ. პრაღის ზოოპარკი" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">კატეგორია *</label>
+                <select id="category" name="category" required>
+                    <option value="სანახაობა">სანახაობა</option>
+                    <option value="რესტორანი">რესტორანი</option>
+                    <option value="შოპინგი">შოპინგი</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="location">ზუსტი უბანი/მისამართი *</label>
+                <input type="text" id="location" name="location" placeholder="მაგ. პრაღა 7" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price_czk">საშუალო ფასი (CZK-ში, 0 = უფასო) *</label>
+                <input type="number" id="price_czk" name="price_czk" placeholder="მაგ. 250" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="working_hours">სამუშაო დღეები და საათები</label>
+                <input type="text" id="working_hours" name="working_hours" placeholder="მაგ. ორშ-კვი: 09:00 - 21:00">
+            </div>
+
+            <div class="form-group">
+                <label for="image">სურათის ლინკი (არაა სავალდებულო)</label>
+                <input type="url" id="image" name="image" placeholder="ჩაწერეთ სურათის URL მისამართი">
+            </div>
+
+            <div class="form-group">
+                <label for="description">აღწერა *</label>
+                <textarea id="description" name="description" rows="4" placeholder="დაწერეთ მოკლე აღწერა..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">ადგილის დამატება</button>
+        </form>
+
+        <a href="/" class="back-link"><i class="fa-solid fa-arrow-left"></i> მთავარ გვერდზე დაბრუნება</a>
+    </div>
+
+</body>
+</html>
