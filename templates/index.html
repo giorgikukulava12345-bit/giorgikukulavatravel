@@ -2,7 +2,7 @@
 <html lang="ka">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ჩეხეთის გზამკვლევი | CzechGuide</title>
     <!-- Font Awesome ხატულები -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -39,36 +39,35 @@
         /* Header / Navigation */
         header {
             background-color: #ffffff;
-            padding: 12px 16px;
+            padding: 14px 6%;
             position: sticky;
             top: 0;
             z-index: 100;
             border-bottom: 1px solid var(--border-color);
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            width: 100%;
         }
 
         .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .logo {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 800;
             color: var(--dark);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             letter-spacing: -0.5px;
         }
 
         .logo i {
             color: var(--primary);
-            font-size: 22px;
+            font-size: 26px;
         }
 
         .logo span {
@@ -78,17 +77,17 @@
         .controls-group {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
         .select-styled {
             background-color: #f0f0f0;
             color: var(--dark);
             border: 1px solid transparent;
-            padding: 5px 9px;
+            padding: 6px 12px;
             border-radius: var(--radius-pill);
             font-weight: 600;
-            font-size: 11.5px;
+            font-size: 13px;
             outline: none;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -98,41 +97,39 @@
             background-color: #e5e5e5;
         }
 
-        /* Nav Category Tabs - FIT ALL BUTTONS ON MOBILE WITHOUT SCROLL */
+        /* Nav Category Tabs */
         nav {
             width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+
+        nav::-webkit-scrollbar {
+            display: none;
         }
 
         nav ul {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             list-style: none;
-            gap: 4px;
+            gap: 10px;
             width: 100%;
-        }
-
-        nav ul li {
-            flex: 1;
-            text-align: center;
         }
 
         nav ul li a {
             text-decoration: none;
             color: var(--dark);
             font-weight: 600;
-            font-size: 13px;
-            padding: 7px 12px;
+            font-size: 14px;
+            padding: 8px 18px;
             border-radius: var(--radius-pill);
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 5px;
+            gap: 8px;
             background-color: #f5f5f5;
             border: 1px solid #e8e8e8;
-            white-space: nowrap;
-            width: 100%;
         }
 
         nav ul li a:hover {
@@ -152,7 +149,7 @@
         /* Hero Section */
         .hero {
             background: #ffffff;
-            padding: 35px 16px 25px 16px;
+            padding: 50px 20px 40px 20px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
@@ -163,17 +160,17 @@
         }
 
         .hero-content h1 {
-            font-size: 32px;
+            font-size: 42px;
             font-weight: 800;
             color: var(--dark);
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
         }
 
         .hero-content p {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--gray-text);
-            margin-bottom: 18px;
+            margin-bottom: 24px;
         }
 
         .btn {
@@ -182,11 +179,11 @@
             justify-content: center;
             background-color: var(--primary);
             color: white;
-            padding: 10px 24px;
+            padding: 12px 30px;
             text-decoration: none;
             border-radius: var(--radius-pill);
             font-weight: 700;
-            font-size: 13.5px;
+            font-size: 15px;
             transition: all 0.2s ease;
             box-shadow: 0 4px 12px rgba(0, 170, 108, 0.25);
         }
@@ -200,13 +197,13 @@
         .container {
             max-width: 1240px;
             margin: 0 auto;
-            padding: 24px 16px;
+            padding: 40px 20px;
         }
 
         .section-title {
             text-align: left;
-            margin-bottom: 20px;
-            font-size: 22px;
+            margin-bottom: 30px;
+            font-size: 28px;
             font-weight: 800;
             color: var(--dark);
             letter-spacing: -0.5px;
@@ -215,8 +212,8 @@
         /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
         }
 
         .card {
@@ -234,15 +231,22 @@
             box-shadow: var(--shadow-md);
         }
 
-        .card-img {
-            height: 190px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
+        .card-img-wrapper {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #e0e0e0;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .card-body {
-            padding: 16px;
+            padding: 18px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -262,16 +266,16 @@
         }
 
         .card-body h3 {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             color: var(--dark);
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 700;
         }
 
         .card-body p {
             color: var(--gray-text);
-            font-size: 13px;
-            margin-bottom: 14px;
+            font-size: 13.5px;
+            margin-bottom: 16px;
             flex-grow: 1;
             line-height: 1.5;
         }
@@ -316,7 +320,7 @@
 
         .price-display b {
             color: var(--dark);
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 800;
         }
 
@@ -325,7 +329,7 @@
             display: none;
             background: white;
             border-radius: var(--radius-md);
-            padding: 18px;
+            padding: 28px;
             border: 1px solid var(--border-color);
             box-shadow: var(--shadow-sm);
         }
@@ -334,24 +338,24 @@
             text-align: center;
             background: #f0f7ff;
             color: #0052cc;
-            padding: 12px;
+            padding: 14px;
             border-radius: var(--radius-md);
             font-weight: 700;
-            margin-bottom: 18px;
-            font-size: 13px;
+            margin-bottom: 24px;
+            font-size: 14px;
             border: 1px solid #d0e2ff;
         }
 
         .day-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 16px;
-            margin-bottom: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-bottom: 24px;
         }
 
         .day-card {
             background: #fafafa;
-            padding: 14px;
+            padding: 18px;
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
             border-top: 4px solid var(--primary);
@@ -359,8 +363,8 @@
 
         .day-card h4 {
             color: var(--dark);
-            margin-bottom: 10px;
-            font-size: 14px;
+            margin-bottom: 12px;
+            font-size: 15px;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -369,7 +373,7 @@
 
         .day-card ul {
             list-style: none;
-            font-size: 12.5px;
+            font-size: 13px;
             color: var(--gray-text);
         }
 
@@ -394,11 +398,11 @@
 
         .list-styled {
             list-style: none;
-            font-size: 12.5px;
+            font-size: 13px;
         }
 
         .list-styled li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             padding-left: 14px;
             position: relative;
         }
@@ -407,33 +411,24 @@
             content: "•";
             color: var(--primary);
             font-weight: bold;
-            font-size: 15px;
+            font-size: 16px;
             position: absolute;
             left: 0;
             top: -2px;
         }
 
-        /* 📱 Mobile Specific Adjustments for Nav Buttons */
-        @media (max-width: 600px) {
-            header { padding: 10px 8px; }
-            
-            nav ul {
-                gap: 3px;
-            }
-
-            nav ul li a {
-                padding: 6px 5px;
-                font-size: 11px;
-                gap: 3px;
-            }
-
-            nav ul li a i {
-                font-size: 10px;
-            }
-
-            .cards-grid { grid-template-columns: 1fr; }
+        /* 📱 Mobile Responsive */
+        @media (max-width: 768px) {
+            header { padding: 12px 16px; }
+            .logo { font-size: 20px; }
+            .hero { padding: 35px 16px 25px 16px; }
+            .hero-content h1 { font-size: 28px; }
+            .hero-content p { font-size: 14px; }
+            nav ul { justify-content: flex-start; }
+            nav ul li a { padding: 6px 14px; font-size: 12.5px; }
+            .container { padding: 20px 14px; }
+            .section-title { font-size: 22px; margin-bottom: 20px; }
             .day-grid { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 24px; }
         }
     </style>
 </head>
@@ -463,7 +458,7 @@
             </div>
         </div>
 
-        <!-- ნავიგაცია - 4 კატეგორია (ყველა ეტევა მობილურზე გაწევის გარეშე) -->
+        <!-- ნავიგაცია - 4 კატეგორია -->
         <nav>
             <ul>
                 <li><a href="#" data-target="სანახაობა" class="filter-btn active" id="btn-sightseeing"><i class="fa-solid fa-camera"></i> <span>სანახაობები</span></a></li>
@@ -496,7 +491,11 @@
         <div class="cards-grid" id="cards-container">
             {% for loc in locations %}
             <div class="card" data-category="{{ loc.category }}">
-                <div class="card-img" style="background-image: url('{{ loc.image }}');"></div>
+                <div class="card-img-wrapper">
+                    <img src="{{ loc.image }}" 
+                         alt="{{ loc.title }}" 
+                         loading="lazy">
+                </div>
                 <div class="card-body">
                     <span class="tag" data-tag-ka="{{ loc.category }}" data-tag-en="{{ loc.category_en }}">{{ loc.category }}</span>
                     <h3>{{ loc.title }}</h3>
@@ -577,8 +576,8 @@
             </div>
 
             <!-- რესტორნები -->
-            <div style="background: #fafafa; padding: 16px; border-radius: var(--radius-md); margin-bottom: 16px; border: 1px solid var(--border-color);">
-                <h4 style="color: var(--dark); margin-bottom: 10px; font-size: 14px; font-weight: 700;"><i class="fa-solid fa-utensils"></i> სად ვისადილოთ / ვისაუზმოთ</h4>
+            <div style="background: #fafafa; padding: 20px; border-radius: var(--radius-md); margin-bottom: 20px; border: 1px solid var(--border-color);">
+                <h4 style="color: var(--dark); margin-bottom: 12px; font-size: 15px; font-weight: 700;"><i class="fa-solid fa-utensils"></i> სად ვისადილოთ / ვისაუზმოთ</h4>
                 <ul class="list-styled">
                     <li><a href="https://www.google.com/maps/search/?api=1&query=Havelska+Koruna+Prague" target="_blank" class="map-item"><b>Havelská Koruna</b> <i class="fa-solid fa-location-dot"></i></a>: <b>200–350 CZK (~25–43 GEL)</b>. ბიუჯეტური არჩევანი.</li>
                     <li><a href="https://www.google.com/maps/search/?api=1&query=Lokal+Dlouhaa+Prague" target="_blank" class="map-item"><b>Lokál Dlouhááá</b> <i class="fa-solid fa-location-dot"></i></a>: <b>250–450 CZK (~31–56 GEL)</b>. ტრადიციული კერძები.</li>
@@ -588,8 +587,8 @@
             </div>
 
             <!-- ბილეთები & რჩევები -->
-            <div style="background: #f0f7ff; padding: 16px; border-radius: var(--radius-md); margin-bottom: 16px; border: 1px solid #d0e2ff;">
-                <h4 style="color: #0052cc; margin-bottom: 10px; font-size: 14px; font-weight: 700;"><i class="fa-solid fa-circle-info"></i> ბილეთები & რჩევები</h4>
+            <div style="background: #f0f7ff; padding: 20px; border-radius: var(--radius-md); margin-bottom: 20px; border: 1px solid #d0e2ff;">
+                <h4 style="color: #0052cc; margin-bottom: 12px; font-size: 15px; font-weight: 700;"><i class="fa-solid fa-circle-info"></i> ბილეთები & რჩევები</h4>
                 <ul class="list-styled">
                     <li><b>პრაღის ციხე:</b> ~<b>450 CZK (~56 GEL)</b> ზრდასრული.</li>
                     <li><b>ზოოპარკი:</b> ~<b>330 CZK (~41 GEL)</b> ზრდასრული, <b>250 CZK (~31 GEL)</b> ბავშვი.</li>
@@ -599,14 +598,14 @@
                 </ul>
             </div>
 
-            <!-- ჯამური სავარაუდო ბიუჯეტი 1 ადამიანზე -->
-            <div style="background: #eaf7f2; padding: 16px; border-radius: var(--radius-md); border-left: 5px solid var(--primary);">
-                <h4 style="color: var(--primary-hover); margin-bottom: 8px; font-size: 14px; font-weight: 700;"><i class="fa-solid fa-wallet"></i> სავარაუდო ბიუჯეტი 1 ადამიანზე (4 დღე)</h4>
-                <p style="font-size: 13px; color: var(--dark); margin-bottom: 5px;">
+            <!-- ჯამური سავარაუდო ბიუჯეტი 1 ადამიანზე -->
+            <div style="background: #eaf7f2; padding: 20px; border-radius: var(--radius-md); border-left: 5px solid var(--primary);">
+                <h4 style="color: var(--primary-hover); margin-bottom: 8px; font-size: 15px; font-weight: 700;"><i class="fa-solid fa-wallet"></i> სავარაუდო ბიუჯეტი 1 ადამიანზე (4 დღე)</h4>
+                <p style="font-size: 14px; color: var(--dark); margin-bottom: 5px;">
                     • <b>საჭირო თანხა (ატრაქციონები, კვება, ტრანსპორტი):</b> 
                     <b>3,500–4,900 CZK (~430–610 GEL)</b>
                 </p>
-                <span style="font-size: 11.5px; color: var(--gray-text);">* არ მოიცავს სასტუმროსა და ავიაბილეთების ღირებულებას.</span>
+                <span style="font-size: 12px; color: var(--gray-text);">* არ მოიცავს სასტუმროსა და ავიაბილეთების ღირებულებას.</span>
             </div>
         </div>
     </section>
@@ -735,10 +734,7 @@
                 });
             });
 
-            // 🚀 ჩატვირთვისთანავე ავტომატურად გადაიყვანოს ფასები GEL-ში
             updatePrices();
-
-            // თავდაპირველად გახსნას სანახაობები
             document.getElementById("btn-sightseeing").click();
         });
     </script>
