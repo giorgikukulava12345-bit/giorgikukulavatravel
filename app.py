@@ -16,13 +16,13 @@ def get_exchange_rates():
                 "EUR": data["rates"].get("EUR", 0.040)
             }
     except Exception as e:
-        print(f"ვალუტის კურსის წამოღების შეცდომა: {e}")
+        print(f"ვალუტის კურსის შეცდომა: {e}")
     return {"GEL": 0.12, "USD": 0.043, "EUR": 0.040}
 
-# დინამიკური ლოკაციების სრული ბაზა (ორენოვანი)
+# დინამიკური ლოკაციების სრული ბაზა (ლოკალური ფაილებით static საქაღალდიდან)
 LOCATIONS = [
     # =========================================================
-    # --- სანახაობები (დალაგებული: Prague 1-დან Prague 7-მდე + ჩეხეთის რეგიონები) ---
+    # --- სანახაობები (static/ საქაღალდის ფაილები) ---
     # =========================================================
     {
         "title": "Charles Bridge",
@@ -34,7 +34,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "24/7",
-        "image": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80",
+        "image": "/static/Charles Bridge.png",
         "map_query": "Charles Bridge, Prague 1"
     },
     {
@@ -47,7 +47,7 @@ LOCATIONS = [
         "price_czk": 250,
         "price_text": "250 CZK",
         "working_hours": "06:00 - 22:00",
-        "image": "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=800&q=80",
+        "image": "/static/prague castle.png",
         "map_query": "Prague Castle, Prague 1"
     },
     {
@@ -60,7 +60,7 @@ LOCATIONS = [
         "price_czk": 250,
         "price_text": "250 CZK",
         "working_hours": "09:00 - 21:00",
-        "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80",
+        "image": "/static/prague astronomical clock.png",
         "map_query": "Prague Astronomical Clock, Prague 1"
     },
     {
@@ -73,7 +73,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "24/7",
-        "image": "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=800&q=80",
+        "image": "/static/old town square.png",
         "map_query": "Old Town Square, Prague 1"
     },
     {
@@ -86,7 +86,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "24/7",
-        "image": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+        "image": "/static/Lennon Wall.png",
         "map_query": "John Lennon Wall, Prague 1"
     },
     {
@@ -99,7 +99,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "24/7",
-        "image": "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80",
+        "image": "/static/Prague Wenceslas Square.png",
         "map_query": "Wenceslas Square, Prague 1"
     },
     {
@@ -112,7 +112,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "10:00 - 22:00",
-        "image": "https://images.unsplash.com/photo-1581417478175-a9ef18f210c2?auto=format&fit=crop&w=800&q=80",
+        "image": "/static/Prague Dancing House.png",
         "map_query": "Dancing House, Prague 2"
     },
     {
@@ -125,7 +125,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "09:00 - 18:00",
-        "image": "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=800&q=80",
+        "image": "/static/Vyšehrad Fortress.png",
         "map_query": "Vysehrad, Prague 2"
     },
     {
@@ -138,7 +138,7 @@ LOCATIONS = [
         "price_czk": 150,
         "price_text": "150 CZK",
         "working_hours": "10:00 - 20:00",
-        "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80",
+        "image": "/static/Petřín Tower.png",
         "map_query": "Petrin Tower, Prague 5"
     },
     {
@@ -151,7 +151,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "24/7",
-        "image": "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=800&q=80",
         "map_query": "Letna Park, Prague 7"
     },
     {
@@ -177,7 +177,7 @@ LOCATIONS = [
         "price_czk": 180,
         "price_text": "180 CZK",
         "working_hours": "09:00 - 17:00",
-        "image": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+        "image": "/static/Sedlec Ossuary.png",
         "map_query": "Sedlec Ossuary, Kutna Hora"
     },
     {
@@ -190,12 +190,12 @@ LOCATIONS = [
         "price_czk": 150,
         "price_text": "150 CZK",
         "working_hours": "09:00 - 17:00",
-        "image": "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=800&q=80",
+        "image": "/static/Český Krumlov Castle.png",
         "map_query": "State Castle Český Krumlov"
     },
 
     # =========================================================
-    # --- სად ვჭამოთ (რესტორნები და ლუდსახარშები) ---
+    # --- რესტორნები ---
     # =========================================================
     {
         "title": "Havelská Koruna",
@@ -220,7 +220,7 @@ LOCATIONS = [
         "price_czk": 350,
         "price_text": "250-450 CZK",
         "working_hours": "11:00 - 00:00",
-        "image": "https://images.unsplash.com/photo-1538488881022-47576f71d5a8?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
         "map_query": "Lokal Dlouhaa, Prague 1"
     },
     {
@@ -272,7 +272,7 @@ LOCATIONS = [
         "price_czk": 300,
         "price_text": "300 CZK",
         "working_hours": "14:00 - 23:00",
-        "image": "https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80",
         "map_query": "U Kunstatu, Prague 1"
     },
     {
@@ -285,7 +285,7 @@ LOCATIONS = [
         "price_czk": 380,
         "price_text": "380 CZK",
         "working_hours": "11:30 - 23:00",
-        "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80",
         "map_query": "Lod Pivovar, Prague 1"
     },
     {
@@ -298,7 +298,7 @@ LOCATIONS = [
         "price_czk": 400,
         "price_text": "400 CZK",
         "working_hours": "10:00 - 23:00",
-        "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1518176258769-f227c798150e?auto=format&fit=crop&w=800&q=80",
         "map_query": "U Fleku, Kremencova, Prague 1"
     },
     {
@@ -311,7 +311,7 @@ LOCATIONS = [
         "price_czk": 450,
         "price_text": "450 CZK",
         "working_hours": "10:00 - 22:00",
-        "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1584225065152-4a1454aa3d4e?auto=format&fit=crop&w=800&q=80",
         "map_query": "Strahov Monastery Brewery, Prague 1"
     },
     {
@@ -337,7 +337,7 @@ LOCATIONS = [
         "price_czk": 300,
         "price_text": "300 CZK",
         "working_hours": "15:00 - 23:00",
-        "image": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
         "map_query": "U Zlateho tygra, Husova, Prague 1"
     },
     {
@@ -350,7 +350,7 @@ LOCATIONS = [
         "price_czk": 380,
         "price_text": "380 CZK",
         "working_hours": "11:30 - 23:00",
-        "image": "https://images.unsplash.com/photo-1518176258769-f227c798150e?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=800&q=80",
         "map_query": "U Medvidku, Prague 1"
     },
     {
@@ -389,7 +389,7 @@ LOCATIONS = [
         "price_czk": 320,
         "price_text": "320 CZK",
         "working_hours": "15:00 - 01:00",
-        "image": "https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?auto=format&fit=crop&w=800&q=80",
         "map_query": "Dva kohouti, Prague 8"
     },
     {
@@ -402,12 +402,12 @@ LOCATIONS = [
         "price_czk": 350,
         "price_text": "350 CZK",
         "working_hours": "11:00 - 23:00",
-        "image": "https://images.unsplash.com/photo-1584225065152-4a1454aa3d4e?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1532635241-17e820acc59f?auto=format&fit=crop&w=800&q=80",
         "map_query": "Vinohradsky pivovar, Prague 10"
     },
 
     # =========================================================
-    # --- შოპინგი (დალაგებული: Prague 1-დან 14-მდე) ---
+    # --- შოპინგი ---
     # =========================================================
     {
         "title": "Palladium",
@@ -484,7 +484,7 @@ LOCATIONS = [
         "price_czk": 1800,
         "price_text": "1800 CZK",
         "working_hours": "10:00 - 19:30",
-        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1581417478175-a9ef18f210c2?auto=format&fit=crop&w=800&q=80",
         "map_query": "Vinohradsky Pavilon, Prague 2"
     },
     {
@@ -510,7 +510,7 @@ LOCATIONS = [
         "price_czk": 1200,
         "price_text": "1200 CZK",
         "working_hours": "09:00 - 21:00",
-        "image": "https://images.unsplash.com/photo-1581417478175-a9ef18f210c2?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=800&q=80",
         "map_query": "OC Novy Smichov, Prague 5"
     },
     {
@@ -523,7 +523,7 @@ LOCATIONS = [
         "price_czk": 1100,
         "price_text": "1100 CZK",
         "working_hours": "09:00 - 21:00",
-        "image": "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?auto=format&fit=crop&w=800&q=80",
         "map_query": "Galerie Harfa, Prague 9"
     },
     {
@@ -536,7 +536,7 @@ LOCATIONS = [
         "price_czk": 900,
         "price_text": "900 CZK",
         "working_hours": "09:00 - 21:00",
-        "image": "https://images.unsplash.com/photo-1581417478175-a9ef18f210c2?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80",
         "map_query": "NC Eden, Prague 10"
     },
     {
@@ -549,7 +549,7 @@ LOCATIONS = [
         "price_czk": 1600,
         "price_text": "1600 CZK",
         "working_hours": "10:00 - 20:00",
-        "image": "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
         "map_query": "Fashion Arena Prague Outlet, Prague 10"
     },
     {
@@ -575,7 +575,7 @@ LOCATIONS = [
         "price_czk": 1000,
         "price_text": "1000 CZK",
         "working_hours": "09:00 - 21:00",
-        "image": "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80",
+        "image": "https://images.unsplash.com/photo-1567449303078-57ad995bd301?auto=format&fit=crop&w=800&q=80",
         "map_query": "Centrum Cerny Most, Prague 14"
     }
 ]
