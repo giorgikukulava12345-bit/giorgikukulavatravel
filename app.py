@@ -19,7 +19,7 @@ def get_exchange_rates():
         print(f"ვალუტის კურსის შეცდომა: {e}")
     return {"GEL": 0.12, "USD": 0.043, "EUR": 0.040}
 
-# დინამიკური ლოკაციების სრული ბაზა (ლოკალური ფაილებით static საქაღალდიდან)
+# დინამიკური ლოკაციების სრული ბაზა
 LOCATIONS = [
     # =========================================================
     # --- სანახაობები (static/ საქაღალდის ფაილები) ---
@@ -34,7 +34,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "24/7",
-        "image": "/static/Charles Bridge.png",
+        "image": "/static/charles-bridge.png",
         "map_query": "Charles Bridge, Prague 1"
     },
     {
@@ -47,7 +47,7 @@ LOCATIONS = [
         "price_czk": 250,
         "price_text": "250 CZK",
         "working_hours": "06:00 - 22:00",
-        "image": "/static/prague castle.png",
+        "image": "/static/prague-castle.png",
         "map_query": "Prague Castle, Prague 1"
     },
     {
@@ -60,7 +60,7 @@ LOCATIONS = [
         "price_czk": 250,
         "price_text": "250 CZK",
         "working_hours": "09:00 - 21:00",
-        "image": "/static/prague astronomical clock.png",
+        "image": "/static/prague-astronomical-clock.png",
         "map_query": "Prague Astronomical Clock, Prague 1"
     },
     {
@@ -73,7 +73,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "24/7",
-        "image": "/static/old town square.png",
+        "image": "/static/old-town-square.png",
         "map_query": "Old Town Square, Prague 1"
     },
     {
@@ -86,7 +86,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "24/7",
-        "image": "/static/Lennon Wall.png",
+        "image": "/static/lennon-wall.png",
         "map_query": "John Lennon Wall, Prague 1"
     },
     {
@@ -99,7 +99,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "24/7",
-        "image": "/static/Prague Wenceslas Square.png",
+        "image": "/static/prague-wenceslas-square.png",
         "map_query": "Wenceslas Square, Prague 1"
     },
     {
@@ -112,7 +112,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "10:00 - 22:00",
-        "image": "/static/Prague Dancing House.png",
+        "image": "/static/prague-dancing-house.png",
         "map_query": "Dancing House, Prague 2"
     },
     {
@@ -125,7 +125,7 @@ LOCATIONS = [
         "price_czk": 0,
         "price_text": "0 CZK",
         "working_hours": "09:00 - 18:00",
-        "image": "/static/Vyšehrad Fortress.png",
+        "image": "/static/vysehrad-fortress.png",
         "map_query": "Vysehrad, Prague 2"
     },
     {
@@ -138,7 +138,7 @@ LOCATIONS = [
         "price_czk": 150,
         "price_text": "150 CZK",
         "working_hours": "10:00 - 20:00",
-        "image": "/static/Petřín Tower.png",
+        "image": "/static/petrin-tower.png",
         "map_query": "Petrin Tower, Prague 5"
     },
     {
@@ -177,7 +177,7 @@ LOCATIONS = [
         "price_czk": 180,
         "price_text": "180 CZK",
         "working_hours": "09:00 - 17:00",
-        "image": "/static/Sedlec Ossuary.png",
+        "image": "/static/sedlec-ossuary.png",
         "map_query": "Sedlec Ossuary, Kutna Hora"
     },
     {
@@ -190,7 +190,7 @@ LOCATIONS = [
         "price_czk": 150,
         "price_text": "150 CZK",
         "working_hours": "09:00 - 17:00",
-        "image": "/static/Český Krumlov Castle.png",
+        "image": "/static/cesky-krumlov-castle.png",
         "map_query": "State Castle Český Krumlov"
     },
 
