@@ -100,21 +100,20 @@
         /* Nav Category Tabs */
         nav {
             width: 100%;
-            overflow-x: auto;
-            white-space: nowrap;
-            scrollbar-width: none;
-        }
-
-        nav::-webkit-scrollbar {
-            display: none;
         }
 
         nav ul {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             list-style: none;
-            gap: 10px;
+            gap: 8px;
             width: 100%;
+        }
+
+        nav ul li {
+            flex: 1 1 auto;
+            text-align: center;
         }
 
         nav ul li a {
@@ -122,14 +121,17 @@
             color: var(--dark);
             font-weight: 600;
             font-size: 14px;
-            padding: 8px 18px;
+            padding: 8px 14px;
             border-radius: var(--radius-pill);
             transition: all 0.2s ease;
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            gap: 6px;
             background-color: #f5f5f5;
             border: 1px solid #e8e8e8;
+            width: 100%;
+            white-space: nowrap;
         }
 
         nav ul li a:hover {
@@ -417,15 +419,25 @@
             top: -2px;
         }
 
-        /* 📱 Mobile Responsive */
+        /* 📱 Mobile Responsive Adjustment */
         @media (max-width: 768px) {
             header { padding: 12px 16px; }
             .logo { font-size: 20px; }
             .hero { padding: 35px 16px 25px 16px; }
             .hero-content h1 { font-size: 28px; }
             .hero-content p { font-size: 14px; }
-            nav ul { justify-content: flex-start; }
-            nav ul li a { padding: 6px 14px; font-size: 12.5px; }
+            
+            nav ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
+            }
+            
+            nav ul li a { 
+                padding: 8px 6px; 
+                font-size: 12px; 
+            }
+
             .container { padding: 20px 14px; }
             .section-title { font-size: 22px; margin-bottom: 20px; }
             .day-grid { grid-template-columns: 1fr; }
@@ -458,7 +470,7 @@
             </div>
         </div>
 
-        <!-- ნავიგაცია - 4 კატეგორია -->
+        <!-- ნავიგაცია - 4 კატეგორია (მობილურზე ეწყობა 2x2 ბადედ) -->
         <nav>
             <ul>
                 <li><a href="#" data-target="სანახაობა" class="filter-btn active" id="btn-sightseeing"><i class="fa-solid fa-camera"></i> <span>სანახაობები</span></a></li>
